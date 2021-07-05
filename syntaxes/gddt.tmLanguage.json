@@ -1,0 +1,69 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "gddt",
+	"patterns": [
+		{
+			"include": "#ifmod"
+		},
+		{
+			"include": "#otherkeys"
+		},
+		{
+			"include": "#macro"
+		},
+		{
+			"include": "#internalMacro"
+		},
+		{
+			"include": "#m4quote"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"comment": {
+			"name": "comment.line.double-slash",
+			"match": "\/\/.*"
+		},
+		"ifmod": {
+			"patterns": [{
+				"name": "keyword.control.gddt",
+				"match": "\\b(_if_mod|_elif_mod|if_end|_set_var|_inc|_cc)"
+			}]
+		},
+		"otherkeys": {
+			"patterns": [{
+				"name": "keyword.other.gddt",
+				"match": "\\b(_set_var|_inc|_cc)"
+			}]
+		},
+		"macro": {
+			"name": "support.function.gddt",
+			"match": "\\b_[^ (\n]*"
+		},
+		"internalMacro": {
+			"name": "support.function.gddt",
+			"match": "\\bm_[^ (\n]*"
+		},
+		"m4quote": {
+			"name": "string.quoted.other",
+			"begin": "`",
+			"end": "'",
+			"patterns": [
+				{
+					"name":"support.constant.gddt",
+					"match": "\\bv_[^ (\n]*"
+				}
+			]
+		},
+		"variable" : {
+			"name":"support.constant.gddt",
+			"match": "\\bv_[^ (\n]*"
+		}
+	},
+	"scopeName": "source.gddt"
+}

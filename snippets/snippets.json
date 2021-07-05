@@ -1,0 +1,278 @@
+{
+	"If mod": {
+		"prefix": ["if", "_if_mod"],
+		"body": [
+			"_if_mod(${mod})",
+			"",
+			"_if_end()"
+		],
+		"description": "If mod"
+	},
+	"If elif mode": {
+		"prefix": ["ifel", "_ifel"],
+		"body": [
+			"_if_mod(${mod1})",
+			"",
+			"_elif_mod(${mod2})",
+			"",
+			"_if_end()"
+		],
+		"description": "if elif mod"
+	},
+	"elif mod": {
+		"prefix": ["elif", "_elif"],
+		"body": "_elif_mod(${mod})",
+		"description": "elif mod"
+	},
+	"Repeat": {
+		"prefix": ["rep", "_repeat"],
+		"body": "_repeat(${Count}, ${Content})",
+		"description": "Repeat"
+	},
+	"Set variable": {
+		"prefix": ["set", "_set_var"],
+		"body": "_set_var(`${Name}',`${Content}')dnl",
+		"description": "Set variable"
+	},
+	"Include file": {
+		"prefix": ["inc", "_inc"],
+		"body": "_inc(${fileName})",
+		"description": "Include other files"
+	},
+	"Random text": {
+		"prefix": ["randtext", "_rand_text"],
+		"body": "_rand_text(${Character count})",
+		"description": "Rnadom text"
+	},
+	"Web api": {
+		"prefix": ["wapi", "_wapi"],
+		"body": "_wapi(${URL}, ${JQ query})",
+		"description": "Web api"
+	},
+	"Web csv": {
+		"prefix": ["wcsv", "_wcsv"],
+		"body": "_wcsv(${URL}, ${JQ query})",
+		"description": "Web csv"
+	},
+	"SQL query": {
+		"prefix": ["_sql_query", "sqlquery"],
+		"body": "_sql_query(${csv path}, ${table name}, ${SQL query string}, ${SQLite path})",
+		"description": "Get return value from sql query"
+	},
+	"SQL table": {
+		"prefix": ["_sql_table", "sqltable"],
+		"body": "_sql_table(${csv path}, ${table name}, ${SQL query string})",
+		"description": "Convert sql query result into table"
+	},
+	"Header": {
+		"prefix": "h",
+		"body": "_h${0}(${Content})",
+		"description": "Header"
+	},
+	"Unordered list": {
+		"prefix": "ul",
+		"body": "_ul(${Level}) ${Content}",
+		"description": "Unordered list"
+	},
+	"Ordered list": {
+		"prefix": "ol",
+		"body": "_ol(${Level}) ${Content}",
+		"description": ""
+	},
+	"Bold": {
+		"prefix": ["b", "_b"],
+		"body": "_b(${Content})",
+		"description": "Bold"
+	},
+	"Italic": {
+		"prefix": ["i", "_i"],
+		"body": "_i(${Content})",
+		"description": "Italic"
+	},
+	"Bold italic": {
+		"prefix": ["bi", "_bi"],
+		"body": "_bi(${Content})",
+		"description": "Bold italic"
+	},
+	"Strikethrough": {
+		"prefix": ["st", "_st"],
+		"body": "_st(${Content})",
+		"description": "Strikethrough"
+	},
+	"Underline": {
+		"prefix": ["ud", "_ud"],
+		"body": "_ud(${Content})",
+		"description": "Underline"
+	},
+	"Indentation": {
+		"prefix": ["idt", "_idt"],
+		"body": "_idt(${Indent level})",
+		"description": "Indentation"
+	},
+	"Csv table from path": {
+		"prefix": ["_csv", "csv"],
+		"body": "_csv(${csv Path})",
+		"description": "Csv table from path"
+	},
+	"Raw csv": {
+		"prefix": ["_rcsv", "rcsv"],
+		"body": "_rcsv(${csv content})",
+		"description": "Raw csv"
+	},
+	"Link/Url": {
+		"prefix": ["_url", "url", "link"],
+		"body": "_url(${Address}, ${Alternate text})",
+		"description": "Link or url"
+	},
+	"Image": {
+		"prefix": ["_img", "img", "image"],
+		"body": "_img(${Path}, ${Alternate text})",
+		"description": "Image"
+	},
+	"Images": {
+		"prefix": ["_imgs", "imgs", "images"],
+		"body": "_imgs(${Paths})",
+		"description": "Images"
+	},
+	"Sized images": {
+		"prefix": ["_simgs", "simgs", "sizedimages"],
+		"body": "_simgs(${Size}, ${Paths})",
+		"description": "Sized images"
+	},
+	"Fixed images": {
+		"prefix": ["_fimg", "fimg", "fixedimage"],
+		"body": "_fimg(${Top},${Left},${Width}, ${Path})",
+		"description": "Fixed images"
+	},
+	"Compress image": {
+		"prefix": ["_comp", "comp"],
+		"body": "_comp(${path})",
+		"description": "Compress image"
+	},
+	"Text": {
+		"prefix": ["_text", "text"],
+		"body": "_text(${Font size}, ${Content})",
+		"description": "Text"
+	},
+	"Flex box": {
+		"prefix": ["_fbox", "fbox"],
+		"body": "_fbox(${Content})",
+		"description": "Flex box"
+	},
+	"Font size flex box": {
+		"prefix": ["_ffbox", "ffbox"],
+		"body": "_ffbox(${Font size},${Content})",
+		"description": "Font size flex box"
+	},
+	"Class": {
+		"prefix": ["_cls", "cls", "class"],
+		"body": "_cls(${Class name})",
+		"description": "Class"
+	},
+	"Title and contents class": {
+		"prefix": ["_tnc", "tnc"],
+		"body": "_tnc(${Font size},${Content})",
+		"description": "Title and contents class"
+	},
+	"Title": {
+		"prefix": ["_title", "title"],
+		"body": "_title(${Main title},${Sub title})",
+		"description": "Title"
+	},
+	"Split slide": {
+		"prefix": ["split"],
+		"body": [
+			"_left()",
+			"${Left Content}",
+			"_right()",
+			"${Right Content}",
+			"_end()"
+		],
+		"description": "Split slide"
+	},
+	"Center": {
+		"prefix": ["_center", "center"],
+		"body": "_center(${Content})",
+		"description": "Center marp content"
+	},
+	"Wiki page": {
+		"prefix": ["_wiki_page", "wikipage"],
+		"body": "_wiki_page(${Address})",
+		"description": "Wiki page"
+	},
+	"Wiki page with alt textt": {
+		"prefix": ["_wiki_page_alt", "wikipagealt"],
+		"body": "_wiki_page(${Address}, ${Alternate text})",
+		"description": "Wiki page with alt text"
+	},
+	"Html Table": {
+		"prefix": ["html table", "advanced table", "_table", "table"],
+		"body": [
+			"_ts()",
+			"_tfont(${Header font}, ${Row font})",
+			"_th(${Headers})",
+			"_tr(${Rows})",
+			"_te()"
+		],
+		"description": "Html table"
+	},
+	"New page": {
+		"prefix": ["_new_page", "np", "new_page"],
+		"body": "_new_page()",
+		"description": "New page"
+	},
+	"Styles": {
+		"prefix": ["_styles", "styles"],
+		"body": "_styles(${CSS files})",
+		"description": "Styles"
+	},
+	"Styles": {
+		"prefix": ["_styles", "styles"],
+		"body": "_styles(${CSS files})",
+		"description": "Styles"
+	},
+	"UI begin/end": {
+		"prefix": ["_ui", "ui"],
+		"body": [
+			"_ui_begin(${Page Title})",
+			"",
+			"_ui_end()"
+		],
+		"description": "UI begin/end"
+	},
+	"Script begin/end": {
+		"prefix": ["_script", "script"],
+		"body": [
+			"_script_begin()",
+			"",
+			"_script_end()"
+		],
+		"description": "Script begin/end"
+	},
+	"Top space": {
+		"prefix": ["_top", "top"],
+		"body": [
+			"_top space(",
+			"    _top_left(${Top left content})",
+			"",
+			"    _top_center(${Top center content})",
+			"",
+			"    _top_right(${Top right content})",
+			")"
+		],
+		"description": "Top space"
+	},
+	"Bottom space": {
+		"prefix": ["_bot", "bot"],
+		"body": [
+			"_bot space(",
+			"    _bot_left(${Bot left content})",
+			"",
+			"    _bot_center(${Bot center content})",
+			"",
+			"    _bot_right(${Bot right content})",
+			")"
+		],
+		"description": "Bottom space"
+	}
+}

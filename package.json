@@ -1,0 +1,32 @@
+{
+    "name": "gddt",
+    "displayName": "Gddt",
+    "description": "Gddt, game design document text ",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gddt",
+            "aliases": ["gddt", "gddt"],
+            "extensions": [".gddt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gddt",
+            "scopeName": "source.gddt",
+            "path": "./syntaxes/gddt.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "gddt",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
