@@ -131,7 +131,7 @@
 	},
 	"Webui image": {
 		"prefix": ["_wimg", "wimg", "web image"],
-		"body": "_img(${Path},${Alternate text},${ID},${Ratio})",
+		"body": "_img(${Path},${Alternate text},${ID},${Size})",
 		"description": "Webui image"
 	},
 	"Images": {
