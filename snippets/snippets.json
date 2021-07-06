@@ -2,8 +2,8 @@
 	"If mod": {
 		"prefix": ["ifmod", "_if_mod"],
 		"body": [
-			"_if_mod(${mod})",
-			"    ${Content}",
+			"_if_mod(${1:mod})",
+			"    ${2:Content}",
 			"_if_end()"
 		],
 		"description": "If mod"
@@ -11,207 +11,207 @@
 	"If elif mode": {
 		"prefix": ["ifelmod"],
 		"body": [
-			"_if_mod(${mod1})",
-			"    ${Content}",
-			"_elif_mod(${mod2})",
-			"    ${Content2}",
+			"_if_mod(${1:mod1})",
+			"    ${2:Content}",
+			"_elif_mod(${3:mod2})",
+			"    ${4:Content2}",
 			"_if_end()"
 		],
 		"description": "if elif mod"
 	},
 	"elif mod": {
 		"prefix": ["elifmod", "_elif_mod"],
-		"body": "_elif_mod(${mod})",
+		"body": "_elif_mod(${1:mod})",
 		"description": "elif mod"
 	},
 	"Repeat": {
 		"prefix": ["rep", "_repeat"],
-		"body": "_repeat(${Count}, ${Content})",
+		"body": "_repeat(${1:Count}, ${2:Content})",
 		"description": "Repeat"
 	},
 	"Set variable": {
 		"prefix": ["setvar", "_set_var"],
-		"body": "_set_var(`${Name}',`${Content}')dnl",
+		"body": "_set_var(`${1:Name}',`${2:Content}')dnl",
 		"description": "Set variable"
 	},
 	"Include file": {
 		"prefix": ["inc", "_inc"],
-		"body": "_inc(${fileName})",
+		"body": "_inc(${1:fileName})",
 		"description": "Include other files"
 	},
 	"Random text": {
 		"prefix": ["randtext", "_rand_text"],
-		"body": "_rand_text(${Character count})",
+		"body": "_rand_text(${1:Character count})",
 		"description": "Rnadom text"
 	},
 	"Web api": {
 		"prefix": ["wapi", "_wapi"],
-		"body": "_wapi(${URL}, ${JQ query})",
+		"body": "_wapi(${1:URL}, ${2:JQ query})",
 		"description": "Web api"
 	},
 	"Web csv": {
 		"prefix": ["wcsv", "_wcsv"],
-		"body": "_wcsv(${URL}, ${JQ query})",
+		"body": "_wcsv(${1:URL}, ${2:JQ query})",
 		"description": "Web csv"
 	},
 	"SQL query": {
 		"prefix": ["_sql_query", "sqlquery"],
-		"body": "_sql_query(${csv path}, ${table name}, ${SQL query string}, ${SQLite path})",
+		"body": "_sql_query(${1:csv path}, ${2:table name}, ${3:SQL query string}, ${4:SQLite path})",
 		"description": "Get return value from sql query"
 	},
 	"SQL table": {
 		"prefix": ["_sql_table", "sqltable"],
-		"body": "_sql_table(${csv path}, ${table name}, ${SQL query string})",
+		"body": "_sql_table(${1:csv path}, ${2:table name}, ${3:SQL query string})",
 		"description": "Convert sql query result into table"
 	},
 	"Header": {
 		"prefix": ["h", "_h"],
-		"body": "_h${Level}(${Content})",
+		"body": "_h${1:Level}(${2:Content})",
 		"description": "Header"
 	},
 	"Unordered list": {
 		"prefix": ["ul", "_ul"],
-		"body": "_ul(${Level}) ${Content})",
+		"body": "_ul(${1:Level}) ${2:Content})",
 		"description": "Unordered list"
 	},
 	"Ordered list": {
 		"prefix": ["ol", "_ol"],
-		"body": "_ol(${Level}) ${Content})",
+		"body": "_ol(${1:Level}) ${2:Content})",
 		"description": ""
 	},
 	"Bold": {
 		"prefix": ["b", "_b"],
-		"body": "_b(${Content})",
+		"body": "_b(${1:Content})",
 		"description": "Bold"
 	},
 	"Italic": {
 		"prefix": ["i", "_i"],
-		"body": "_i(${Content})",
+		"body": "_i(${1:Content})",
 		"description": "Italic"
 	},
 	"Bold italic": {
 		"prefix": ["bi", "_bi"],
-		"body": "_bi(${Content})",
+		"body": "_bi(${1:Content})",
 		"description": "Bold italic"
 	},
 	"Strikethrough": {
 		"prefix": ["st", "_st"],
-		"body": "_st(${Content})",
+		"body": "_st(${1:Content})",
 		"description": "Strikethrough"
 	},
 	"Underline": {
 		"prefix": ["ud", "_ud"],
-		"body": "_ud(${Content})",
+		"body": "_ud(${1:Content})",
 		"description": "Underline"
 	},
 	"Indentation": {
 		"prefix": ["idt", "_idt"],
-		"body": "_idt(${Indent level})",
+		"body": "_idt(${1:Indent level})",
 		"description": "Indentation"
 	},
 	"Csv table from path": {
 		"prefix": ["_csv", "csv"],
-		"body": "_csv(${csv file Path})",
+		"body": "_csv(${1:csv file Path})",
 		"description": "Csv table from path"
 	},
 	"Raw csv": {
 		"prefix": ["_rcsv", "rcsv"],
-		"body": "_rcsv(${csv content})",
+		"body": "_rcsv(${1:csv content})",
 		"description": "Raw csv"
 	},
 	"Link/Url": {
 		"prefix": ["_url", "url", "link"],
-		"body": "_url(${Address}, ${Alternate text})",
+		"body": "_url(${1:Address}, ${2:Alternate text})",
 		"description": "Link or url"
 	},
 	"Image": {
 		"prefix": ["_img", "img", "image"],
-		"body": "_img(${Path}, ${Alternate text})",
+		"body": "_img(${1:Path}, ${2:Alternate text})",
 		"description": "Image"
 	},
 	"Webui image": {
 		"prefix": ["_wimg", "wimg", "web image"],
-		"body": "_img(${Path},${Alternate text},${ID},${Size})",
+		"body": "_img(${1:Path},${2:Alternate text},${3:ID},${4:Size})",
 		"description": "Webui image"
 	},
 	"Images": {
 		"prefix": ["_imgs", "imgs", "images"],
-		"body": "_imgs(${Paths})",
+		"body": "_imgs(${1:Paths})",
 		"description": "Images"
 	},
 	"Sized images": {
 		"prefix": ["_simgs", "simgs", "sizedimages"],
-		"body": "_simgs(${Size}, ${Paths})",
+		"body": "_simgs(${1:Size}, ${2:Paths})",
 		"description": "Sized images"
 	},
 	"Fixed image": {
 		"prefix": ["_fimg", "fimg", "fixedimage"],
-		"body": "_fimg(${Path},${Alternate text},${Top},${Left},${Width})",
+		"body": "_fimg(${1:Path},${2:Alternate text},${3:Top},${4:Left},${5:Width})",
 		"description": "Fixed image"
 	},
 	"Compress image": {
 		"prefix": ["_comp", "comp"],
-		"body": "_comp(${path})",
+		"body": "_comp(${1:path})",
 		"description": "Compress image"
 	},
 	"Text": {
 		"prefix": ["_text", "text"],
-		"body": "_text(${Font size}, ${Content})",
+		"body": "_text(${1:Font size}, ${2:Content})",
 		"description": "Text"
 	},
 	"Flex box": {
 		"prefix": ["_fbox", "fbox"],
-		"body": "_fbox(${Content})",
+		"body": "_fbox(${1:Content})",
 		"description": "Flex box"
 	},
 	"Font size flex box": {
 		"prefix": ["_ffbox", "ffbox"],
-		"body": "_ffbox(${Font size},${Content})",
+		"body": "_ffbox(${1:Font size},${2:Content})",
 		"description": "Font size flex box"
 	},
 	"Class": {
 		"prefix": ["_cls", "cls", "class"],
-		"body": "_cls(${Class name})",
+		"body": "_cls(${1:Class name})",
 		"description": "Class"
 	},
 	"Title": {
 		"prefix": ["_title", "title"],
-		"body": "_title(${Main title},${Sub title})",
+		"body": "_title(${1:Main title},${2:Sub title})",
 		"description": "Title"
 	},
 	"Split slide": {
 		"prefix": ["split", "_split"],
 		"body": [
 			"_left()",
-			"    ${Left Content}",
+			"    ${1:Left Content}",
 			"_right()",
-			"    ${Right Content}",
+			"    ${2:Right Content}",
 			"_end()"
 		],
 		"description": "Split slide"
 	},
 	"Center": {
 		"prefix": ["_center", "center"],
-		"body": "_center(${Content})",
+		"body": "_center(${1:Content})",
 		"description": "Center marp content"
 	},
 	"Wiki page": {
 		"prefix": ["_wiki_page", "wikipage"],
-		"body": "_wiki_page(${Address})",
+		"body": "_wiki_page(${1:Address})",
 		"description": "Wiki page"
 	},
 	"Wiki page with alt text": {
 		"prefix": ["_wiki_page_alt", "wikipagealt"],
-		"body": "_wiki_page(${Address}, ${Alternate text})",
+		"body": "_wiki_page(${1:Address}, ${2:Alternate text})",
 		"description": "Wiki page with alt text"
 	},
 	"Html Table": {
 		"prefix": ["_table", "table"],
 		"body": [
 			"_ts()",
-			"_tfont(${Header font}, ${Rows font})",
-			"_th(${Headers})",
-			"_tr(${Rows})",
+			"_tfont(${1:Header font}, ${2:Rows font})",
+			"_th(${3:Headers})",
+			"_tr(${4:Rows})",
 			"_te()"
 		],
 		"description": "Html table"
@@ -223,14 +223,14 @@
 	},
 	"Styles": {
 		"prefix": ["_styles", "styles"],
-		"body": "_styles(${CSS files})",
+		"body": "_styles(${1:CSS files})",
 		"description": "Styles"
 	},
 	"UI begin/end": {
 		"prefix": ["_ui", "ui"],
 		"body": [
-			"_ui_begin(${Page Title})",
-			"    ${Content}",
+			"_ui_begin(${1:Page Title})",
+			"    ${2:Content}",
 			"_ui_end()"
 		],
 		"description": "UI begin/end"
@@ -239,7 +239,7 @@
 		"prefix": ["_script", "script"],
 		"body": [
 			"_script_begin()",
-			"    ${Content}",
+			"    ${1:Content}",
 			"_script_end()"
 		],
 		"description": "Script begin/end"
@@ -248,11 +248,11 @@
 		"prefix": ["_top", "top"],
 		"body": [
 			"_top space(",
-			"    _top_left(${Top left content})",
+			"    _top_left(${1:Top left content})",
 			"",
-			"    _top_center(${Top center content})",
+			"    _top_center(${2:Top center content})",
 			"",
-			"    _top_right(${Top right content})",
+			"    _top_right(${3:Top right content})",
 			")"
 		],
 		"description": "Top space"
@@ -261,11 +261,11 @@
 		"prefix": ["_bot", "bot"],
 		"body": [
 			"_bot space(",
-			"    _bot_left(${Bot left content})",
+			"    _bot_left(${1:Bot left content})",
 			"",
-			"    _bot_center(${Bot center content})",
+			"    _bot_center(${2:Bot center content})",
 			"",
-			"    _bot_right(${Bot right content})",
+			"    _bot_right(${3:Bot right content})",
 			")"
 		],
 		"description": "Bottom space"
@@ -274,7 +274,7 @@
 		"prefix": ["_container", "container"],
 		"body": [
 			"_container(",
-			"    ${Content}",
+			"    ${1:Content}",
 			")"
 		],
 		"description": "Container"
@@ -283,7 +283,7 @@
 		"prefix": ["_vcontainer", "vcontainer"],
 		"body": [
 			"_vcontainer(",
-			"    ${Content}",
+			"    ${1:Content}",
 			")"
 		],
 		"description": "Vertical container"
@@ -292,7 +292,7 @@
 		"prefix": ["_header", "header"],
 		"body": [
 			"_header(",
-			"    ${Content}",
+			"    ${1:Content}",
 			")"
 		],
 		"description": "Container header"
@@ -301,7 +301,7 @@
 		"prefix": ["_footer", "footer"],
 		"body": [
 			"_footer(",
-			"    ${Content}",
+			"    ${1:Content}",
 			")"
 		],
 		"description": "Container footer"
@@ -309,8 +309,8 @@
 	"Content": {
 		"prefix": ["_content", "content"],
 		"body": [
-			"_content(${ID},${Width},",
-			"    ${Content}",
+			"_content(${1:ID},${2:Width},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -318,8 +318,8 @@
 	"Content center": {
 		"prefix": ["_content_center", "contentcenter"],
 		"body": [
-			"_content_center(${ID},${Width},",
-			"    ${Content}",
+			"_content_center(${1:ID},${2:Width},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Content center"
@@ -327,8 +327,8 @@
 	"Content scroll": {
 		"prefix": ["_content_scroll", "contentscroll"],
 		"body": [
-			"_content_scroll(${ID},${Width},",
-			"    ${Content}",
+			"_content_scroll(${1:ID},${2:Width},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -336,8 +336,8 @@
 	"Vertical content": {
 		"prefix": ["_vcontent", "vcontent"],
 		"body": [
-			"_vcontent(${ID},${Height},",
-			"    ${Content}",
+			"_vcontent(${1:ID},${2:Height},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Vertical content"
@@ -345,8 +345,8 @@
 	"Vertical content center": {
 		"prefix": ["_vcontent_center", "vcontentcenter"],
 		"body": [
-			"_vcontent_center(${ID},${Height},",
-			"    ${Content}",
+			"_vcontent_center(${1:ID},${2:Height},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Vertical content center"
@@ -354,125 +354,125 @@
 	"Vertical content scroll": {
 		"prefix": ["_vcontent_scroll", "vcontentscroll"],
 		"body": [
-			"_vcontent_scroll(${ID},${Height},",
-			"    ${Content}",
+			"_vcontent_scroll(${1:ID},${2:Height},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Vertical content scroll"
 	},
 	"Text input": {
 		"prefix": ["_tinput", "tinput"],
-		"body": "_tinput(${ID},${Placeholder})",
+		"body": "_tinput(${1:ID},${2:Placeholder})",
 		"description": "Text input"
 	},
 	"Text input with label": {
 		"prefix": ["_tinput_label", "tinputlabel"],
-		"body": "_tinput_label(${ID},${Placeholder},${Label})",
+		"body": "_tinput_label(${1:ID},${2:Placeholder},${3:Label})",
 		"description": "Text input with label"
 	},
 	"Number input": {
 		"prefix": ["_ninput", "ninput"],
-		"body": "_ninput(${ID},${Placeholder number})",
+		"body": "_ninput(${1:ID},${2:Placeholder number})",
 		"description": "Number input"
 	},
 	"Number input with label": {
 		"prefix": ["_ninput_label", "ninputlabel"],
-		"body": "_ninput_label(${ID},${Placeholder number},${Label})",
+		"body": "_ninput_label(${1:ID},${2:Placeholder number},${3:Label})",
 		"description": "Number input with label"
 	},
 	"Inline group": {
 		"prefix": ["_inline", "inline"],
 		"body": [
 			"_inline(",
-			"    ${Content}",
+			"    ${1:Content}",
 			")"
 		],
 		"description": "Inline group"
 	},
 	"Switch": {
 		"prefix": ["_switch", "switch"],
-		"body": "_switch(${ID},${Content})",
+		"body": "_switch(${1:ID},${2:Content})",
 		"description": "Switch"
 	},
 	"Selection": {
 		"prefix": ["_sel", "sel"],
 		"body": [
-			"_sel(${ID},",
-			"    _sel_item(${Value})",
+			"_sel(${1:ID},",
+			"    _sel_item(${2:Value})",
 			")"
 		],
 		"description": "Selection"
 	},
 	"Selection item": {
 		"prefix": ["_sel_item", "sel_item"],
-		"body": "_sel_item(${Value})",
+		"body": "_sel_item(${1:Value})",
 		"description": "Selection item"
 	},
 	"Radio group": {
 		"prefix": ["_radio", "radio"],
-		"body": "",
+		"body": "_radio(${1:ID}, ${2:Label array})",
 		"description": "Radio group"
 	},
 	"Checkbox": {
 		"prefix": ["_checkbox", "checkbox"],
-		"body": "_checkbox(${ID},${Content})",
+		"body": "_checkbox(${1:ID},${2:Content})",
 		"description": "Checkbox"
 	},
 	"Range": {
 		"prefix": ["_range", "range"],
-		"body": "_range(${ID},${Label},${Min},${Max})",
+		"body": "_range(${1:ID},${2:Label},${3:Min},${4:Max})",
 		"description": "Range"
 	},
 	"Icon": {
 		"prefix": ["_icon", "icon"],
-		"body": "_icon(${Icon type})",
+		"body": "_icon(${1:Icon type})",
 		"description": "Icon"
 	},
 	"Paragraph": {
 		"prefix": ["_p", "p"],
-		"body": "_p(${Content})",
+		"body": "_p(${1:Content})",
 		"description": "Paragraph"
 	},
 	"Button": {
 		"prefix": ["_btn", "btn"],
-		"body": "_btn(${ID},${Label})",
+		"body": "_btn(${1:ID},${2:Label})",
 		"description": "Button"
 	},
 	"Label": {
 		"prefix": ["_label", "label"],
-		"body": "_label(${ID},${Content})",
+		"body": "_label(${1:ID},${2:Content})",
 		"description": "Label"
 	},
 	"Label center": {
 		"prefix": ["_label_center", "labelcenter"],
-		"body": "_label_center(${ID},${Content})",
+		"body": "_label_center(${1:ID},${2:Content})",
 		"description": "Label center"
 	},
 	"Grid group": {
 		"prefix": ["_grid", "grid"],
 		"body": [
-			"_grid(${ID},${Row count},",
-			"    _grid_cell(${ID},${Content})",
+			"_grid(${1:ID},${2:Row count},",
+			"    _grid_cell(${3:ID},${4:Content})",
 			")"
 		],
 		"description": "Grid group"
 	},
 	"Grid cell": {
 		"prefix": ["_grid_cell", "gridcell"],
-		"body": "_grid_cell(${ID},${Content})",
+		"body": "_grid_cell(${1:ID},${2:Content})",
 		"description": "Grid cell"
 	},
 	"Swap buttons": {
 		"prefix": ["_swap_buttons", "swapbuttons"],
-		"body": "_swap_buttons(${ID},${Label array})",
+		"body": "_swap_buttons(${1:ID},${2:Label array})",
 		"description": "Swap buttons"
 	},
 	"Swap area": {
 		"prefix": ["swaparea"],
 		"body": [
-			"_content(${Parent ID},100%,",
-			"    _swap_item(${ID},${Parent ID},",
-			"        ${Content}",
+			"_content(${1:Parent ID},100%,",
+			"    _swap_item(${2:ID},${1:Parent ID},",
+			"        ${3:Content}",
 			"    )",
 			")"
 		],
@@ -481,8 +481,8 @@
 	"Swap item": {
 		"prefix": ["_swap_item", "swapitem"],
 		"body": [
-		"_swap_item(${ID},${Parent ID},",
-		"    ${Content}",
+		"_swap_item(${1:ID},${2:Parent ID},",
+		"    ${3:Content}",
 		")"
 		],
 		"description": "Swap item"
@@ -490,8 +490,8 @@
 	"Card": {
 		"prefix": ["_card", "card"],
 		"body": [
-			"_card(${ID}, ${Title},",
-			"    ${Content}",
+			"_card(${1:ID}, ${2:Title},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Card"
@@ -499,8 +499,8 @@
 	"Card with image": {
 		"prefix": ["_card_img", "cardimg"],
 		"body": [
-			"_card_img(${ID},${Title},${Image url},",
-			"    ${Content}",
+			"_card_img(${1:ID},${2:Title},${3:Image url},",
+			"    ${4:Content}",
 			")"
 		],
 		"description": "Card with image"
@@ -508,8 +508,8 @@
 	"Collection": {
 		"prefix": ["_coll", "coll"],
 		"body": [
-			"_coll(${ID},${Loop count},",
-			"    ${Content}",
+			"_coll(${1:ID},${2:Loop count},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Collection"
@@ -517,8 +517,8 @@
 	"Vertical collection": {
 		"prefix": ["_vcoll", "vcoll"],
 		"body": [
-			"_vcoll(${ID},${Loop count},",
-			"    ${Content}",
+			"_vcoll(${1:ID},${2:Loop count},",
+			"    ${3:Content}",
 			")"
 		],
 		"description": "Vertical collection"
@@ -526,10 +526,10 @@
 	"Modal": {
 		"prefix": ["_modal", "modal"],
 		"body": [
-			"_modal(${ID},",
-			"    ${Modal Header},",
-			"    ${Modal Body},",
-			"    ${Modal footer}",
+			"_modal(${1:ID},",
+			"    ${2:Modal Header},",
+			"    ${3:Modal Body},",
+			"    ${4:Modal footer}",
 			")"
 		],
 		"description": "modal"
@@ -537,8 +537,8 @@
 	"Screentouch": {
 		"prefix": ["_screen_touch", "screentouch"],
 		"body": [
-			"_screentouch(${ID},",
-			"    ${Content}",
+			"_screentouch(${1:ID},",
+			"    ${2:Content}",
 			")"
 		],
 		"description": "Screen touch"
@@ -546,8 +546,8 @@
 	"Sidebar left": {
 		"prefix": ["_sidebar_left", "sidebarleft"],
 		"body": [
-			"_sidebar_left(${ID},",
-			"    ${Content}",
+			"_sidebar_left(${1:ID},",
+			"    ${2:Content}",
 			")"
 		],
 		"description": "Sidebar left"
@@ -555,70 +555,70 @@
 	"Sidebar right": {
 		"prefix": ["_sidebar_right", "sidebarright"],
 		"body": [
-			"_sidebar_right(${ID},",
-			"    ${Content}",
+			"_sidebar_right(${1:ID},",
+			"    ${2:Content}",
 			")"
 		],
 		"description": "Sidebar right"
 	},
 	"Add callback": {
 		"prefix": ["_add_call", "addcall"],
-		"body": "_add_call(${Target ID},${Event type},${Callback})",
+		"body": "_add_call(${1:Target ID},${2:Event type},${3:Callback})",
 		"description": "Add callback"
 	},
 	"Add tooltip": {
 		"prefix": ["_add_tooltip", "addtooltip"],
-		"body": "_add_tooltip(${Target ID},${Content})",
+		"body": "_add_tooltip(${1:Target ID},${2:Content})",
 		"description": "Add tooltip"
 	},
 	"Add tooltips": {
 		"prefix": ["_add_tooltips", "addtooltips"],
-		"body": "_add_tooltips(${Target ID}|${Content2}, ${Target ID2}|${Content2})",
+		"body": "_add_tooltips(${1:Target ID}|${2:Content2}, ${3:Target ID2}|${4:Content2})",
 		"description": "Add tooltips"
 	},
 	"Call alert": {
 		"prefix": ["_call_alert", "callalert"],
-		"body": "_call_alert(${Alert Text})",
+		"body": "_call_alert(${1:Alert Text})",
 		"description": "Call alert"
 	},
 	"Call toggle": {
 		"prefix": ["_call_toggle", "calltoggle"],
-		"body": "_call_toggle(${Target ID})",
+		"body": "_call_toggle(${1:Target ID})",
 		"description": "Call toggle element"
 	},
 	"Call sync text": {
 		"prefix": ["_call_sync_text", "callsynctext"],
-		"body": "_call_sync_text(${Target ID})",
+		"body": "_call_sync_text(${1:Target ID})",
 		"description": "Call sync text"
 	},
 	"Call visit": {
 		"prefix": ["_call_visit", "callvisit"],
-		"body": "_call_visit(${URL address})",
+		"body": "_call_visit(${1:URL address})",
 		"description": "Call visit"
 	},
 	"Call event": {
 		"prefix": ["_call_event", "callevent"],
-		"body": "_call_event(${Target ID},${Event type})",
+		"body": "_call_event(${1:Target ID},${2:Event type})",
 		"description": "Call event"
 	},
 	"Call update": {
 		"prefix": ["_call_update", "callupdate"],
-		"body": "_call_update(${Target ID},${Property name},${Property value})",
+		"body": "_call_update(${1:Target ID},${2:Property name},${3:Property value})",
 		"description": "Call update"
 	},
 	"Call modal": {
 		"prefix": ["_call_modal", "callmodal"],
-		"body": "_call_modal(${Modal ID})",
+		"body": "_call_modal(${1:Modal ID})",
 		"description": "Call modal"
 	},
 	"Call hide modal": {
 		"prefix": ["_hide_modal", "hidemodal"],
-		"body": "_hide_modal(${Modal ID})",
+		"body": "_hide_modal(${1:Modal ID})",
 		"description": "Call hide modal"
 	},
 	"Call sidebar": {
 		"prefix": ["_call_sidebar", "callsidebar"],
-		"body": "_call_sidebar(${Sidbar ID})",
+		"body": "_call_sidebar(${1:Sidbar ID})",
 		"description": "Call sidebar"
 	}
 }
