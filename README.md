@@ -19,3 +19,5 @@ Initial release with syntax highlighting and snippets
 
 - Intellisense with hover information
 - Simple error outputs for common mistakes
+	- Unpaired bracktes or m4 quote strings
+	- Detect unsupported characters such as (` ' , #)
