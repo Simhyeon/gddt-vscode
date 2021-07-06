@@ -32,7 +32,7 @@
 		"ifmod": {
 			"patterns": [{
 				"name": "keyword.control.gddt",
-				"match": "\\b(_if_mod|_elif_mod|if_end|_set_var|_inc|_cc)"
+				"match": "\\b(_if_mod|_elif_mod|_if_end|_set_var|_inc|_cc)"
 			}]
 		},
 		"otherkeys": {
@@ -56,13 +56,13 @@
 			"patterns": [
 				{
 					"name":"support.constant.gddt",
-					"match": "\\bv_[^ (\n]*"
+					"match": "\\bv_[^ (\n`']*"
 				}
 			]
 		},
 		"variable" : {
 			"name":"support.constant.gddt",
-			"match": "\\bv_[^ (\n]*"
+			"match": "\\bv_[^ (\n`']*"
 		}
 	},
 	"scopeName": "source.gddt"
