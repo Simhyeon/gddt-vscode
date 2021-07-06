@@ -3,7 +3,7 @@
 		"prefix": ["ifmod", "_if_mod"],
 		"body": [
 			"_if_mod(${1:mod})",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			"_if_end()"
 		],
 		"description": "If mod"
@@ -12,9 +12,9 @@
 		"prefix": ["ifelmod"],
 		"body": [
 			"_if_mod(${1:mod1})",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			"_elif_mod(${3:mod2})",
-			"    ${4:Content2}",
+			"\t${4:Content2}",
 			"_if_end()"
 		],
 		"description": "if elif mod"
@@ -183,9 +183,9 @@
 		"prefix": ["split", "_split"],
 		"body": [
 			"_left()",
-			"    ${1:Left Content}",
+			"\t${1:Left Content}",
 			"_right()",
-			"    ${2:Right Content}",
+			"\t${2:Right Content}",
 			"_end()"
 		],
 		"description": "Split slide"
@@ -230,7 +230,7 @@
 		"prefix": ["_ui", "ui"],
 		"body": [
 			"_ui_begin(${1:Page Title})",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			"_ui_end()"
 		],
 		"description": "UI begin/end"
@@ -239,7 +239,7 @@
 		"prefix": ["_script", "script"],
 		"body": [
 			"_script_begin()",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			"_script_end()"
 		],
 		"description": "Script begin/end"
@@ -248,11 +248,11 @@
 		"prefix": ["_top", "top"],
 		"body": [
 			"_top space(",
-			"    _top_left(${1:Top left content})",
+			"\t_top_left(${1:Top left content})",
 			"",
-			"    _top_center(${2:Top center content})",
+			"\t_top_center(${2:Top center content})",
 			"",
-			"    _top_right(${3:Top right content})",
+			"\t_top_right(${3:Top right content})",
 			")"
 		],
 		"description": "Top space"
@@ -261,11 +261,11 @@
 		"prefix": ["_bot", "bot"],
 		"body": [
 			"_bot space(",
-			"    _bot_left(${1:Bot left content})",
+			"\t_bot_left(${1:Bot left content})",
 			"",
-			"    _bot_center(${2:Bot center content})",
+			"\t_bot_center(${2:Bot center content})",
 			"",
-			"    _bot_right(${3:Bot right content})",
+			"\t_bot_right(${3:Bot right content})",
 			")"
 		],
 		"description": "Bottom space"
@@ -274,7 +274,7 @@
 		"prefix": ["_container", "container"],
 		"body": [
 			"_container(",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			")"
 		],
 		"description": "Container"
@@ -283,7 +283,7 @@
 		"prefix": ["_vcontainer", "vcontainer"],
 		"body": [
 			"_vcontainer(",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			")"
 		],
 		"description": "Vertical container"
@@ -292,7 +292,7 @@
 		"prefix": ["_header", "header"],
 		"body": [
 			"_header(",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			")"
 		],
 		"description": "Container header"
@@ -301,7 +301,7 @@
 		"prefix": ["_footer", "footer"],
 		"body": [
 			"_footer(",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			")"
 		],
 		"description": "Container footer"
@@ -310,7 +310,7 @@
 		"prefix": ["_content", "content"],
 		"body": [
 			"_content(${1:ID},${2:Width},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -319,7 +319,7 @@
 		"prefix": ["_content_center", "contentcenter"],
 		"body": [
 			"_content_center(${1:ID},${2:Width},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Content center"
@@ -328,7 +328,7 @@
 		"prefix": ["_content_scroll", "contentscroll"],
 		"body": [
 			"_content_scroll(${1:ID},${2:Width},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -337,7 +337,7 @@
 		"prefix": ["_vcontent", "vcontent"],
 		"body": [
 			"_vcontent(${1:ID},${2:Height},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content"
@@ -346,7 +346,7 @@
 		"prefix": ["_vcontent_center", "vcontentcenter"],
 		"body": [
 			"_vcontent_center(${1:ID},${2:Height},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content center"
@@ -355,7 +355,7 @@
 		"prefix": ["_vcontent_scroll", "vcontentscroll"],
 		"body": [
 			"_vcontent_scroll(${1:ID},${2:Height},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content scroll"
@@ -384,7 +384,7 @@
 		"prefix": ["_inline", "inline"],
 		"body": [
 			"_inline(",
-			"    ${1:Content}",
+			"\t${1:Content}",
 			")"
 		],
 		"description": "Inline group"
@@ -398,7 +398,7 @@
 		"prefix": ["_sel", "sel"],
 		"body": [
 			"_sel(${1:ID},",
-			"    _sel_item(${2:Value})",
+			"\t_sel_item(${2:Value})",
 			")"
 		],
 		"description": "Selection"
@@ -452,7 +452,7 @@
 		"prefix": ["_grid", "grid"],
 		"body": [
 			"_grid(${1:ID},${2:Row count},",
-			"    _grid_cell(${3:ID},${4:Content})",
+			"\t_grid_cell(${3:ID},${4:Content})",
 			")"
 		],
 		"description": "Grid group"
@@ -471,9 +471,9 @@
 		"prefix": ["swaparea"],
 		"body": [
 			"_content(${1:Parent ID},100%,",
-			"    _swap_item(${2:ID},${1:Parent ID},",
-			"        ${3:Content}",
-			"    )",
+			"\t_swap_item(${2:ID},${1:Parent ID},",
+			"\t\t${3:Content}",
+			"\t)",
 			")"
 		],
 		"description": "Swap area"
@@ -482,7 +482,7 @@
 		"prefix": ["_swap_item", "swapitem"],
 		"body": [
 		"_swap_item(${1:ID},${2:Parent ID},",
-		"    ${3:Content}",
+		"\t${3:Content}",
 		")"
 		],
 		"description": "Swap item"
@@ -491,7 +491,7 @@
 		"prefix": ["_card", "card"],
 		"body": [
 			"_card(${1:ID}, ${2:Title},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Card"
@@ -500,7 +500,7 @@
 		"prefix": ["_card_img", "cardimg"],
 		"body": [
 			"_card_img(${1:ID},${2:Title},${3:Image url},",
-			"    ${4:Content}",
+			"\t${4:Content}",
 			")"
 		],
 		"description": "Card with image"
@@ -509,7 +509,7 @@
 		"prefix": ["_coll", "coll"],
 		"body": [
 			"_coll(${1:ID},${2:Loop count},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Collection"
@@ -518,7 +518,7 @@
 		"prefix": ["_vcoll", "vcoll"],
 		"body": [
 			"_vcoll(${1:ID},${2:Loop count},",
-			"    ${3:Content}",
+			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical collection"
@@ -527,9 +527,9 @@
 		"prefix": ["_modal", "modal"],
 		"body": [
 			"_modal(${1:ID},",
-			"    ${2:Modal Header},",
-			"    ${3:Modal Body},",
-			"    ${4:Modal footer}",
+			"\t${2:Modal Header},",
+			"\t${3:Modal Body},",
+			"\t${4:Modal footer}",
 			")"
 		],
 		"description": "modal"
@@ -538,7 +538,7 @@
 		"prefix": ["_screen_touch", "screentouch"],
 		"body": [
 			"_screentouch(${1:ID},",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			")"
 		],
 		"description": "Screen touch"
@@ -547,7 +547,7 @@
 		"prefix": ["_sidebar_left", "sidebarleft"],
 		"body": [
 			"_sidebar_left(${1:ID},",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			")"
 		],
 		"description": "Sidebar left"
@@ -556,7 +556,7 @@
 		"prefix": ["_sidebar_right", "sidebarright"],
 		"body": [
 			"_sidebar_right(${1:ID},",
-			"    ${2:Content}",
+			"\t${2:Content}",
 			")"
 		],
 		"description": "Sidebar right"
