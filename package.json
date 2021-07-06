@@ -3,9 +3,26 @@
     "displayName": "Gddt",
     "description": "Gddt, game design document text ",
     "version": "0.0.1",
+    "author": {
+        "name": "Simon creek"
+    },
+    "license": "MIT",
+    "publisher": "simoncreek",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/simhyeon/gddt-vscode"
+    },
     "engines": {
         "vscode": "^1.57.0"
     },
+    "keywords": [
+        "Gddt",
+        "Gdmarp",
+        "Game design",
+        "Game development",
+        "M4",
+        "Macro"
+    ],
     "categories": [
         "Programming Languages",
         "Snippets"
