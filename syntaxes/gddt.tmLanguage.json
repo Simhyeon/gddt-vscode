@@ -22,6 +22,9 @@
 		},
 		{
 			"include": "#comment"
+		},
+		{
+			"include": "#stringLiteral"
 		}
 	],
 	"repository": {
@@ -32,7 +35,7 @@
 		"ifmod": {
 			"patterns": [{
 				"name": "keyword.control.gddt",
-				"match": "\\b(_if_mod|_elif_mod|_if_end|_set_var|_inc|_cc)"
+				"match": "\\b(_if_mod|_elif_mod|_fi_mod)"
 			}]
 		},
 		"otherkeys": {
@@ -63,6 +66,11 @@
 		"variable" : {
 			"name":"support.constant.gddt",
 			"match": "\\bv_[^ (\n`']*"
+		},
+		"stringLiteral" : {
+			"name":"string.quoted.other",
+			"begin": "/#",
+			"end": "#/"
 		}
 	},
 	"scopeName": "source.gddt"
