@@ -71,12 +71,12 @@
 	},
 	"Unordered list": {
 		"prefix": ["ul", "_ul"],
-		"body": "_ul(${1:Level}) ${2:Content})",
+		"body": "_ul(${1:Level}) ${2:Content}",
 		"description": "Unordered list"
 	},
 	"Ordered list": {
 		"prefix": ["ol", "_ol"],
-		"body": "_ol(${1:Level}) ${2:Content})",
+		"body": "_ol(${1:Level}) ${2:Content}",
 		"description": ""
 	},
 	"Bold": {
@@ -154,9 +154,14 @@
 		"body": "_comp(${1:path})",
 		"description": "Compress image"
 	},
+	"String": {
+		"prefix": ["str"],
+		"body": "/#${1:String literal}#/",
+		"description": "String literal"
+	},
 	"Text": {
 		"prefix": ["_text", "text"],
-		"body": "_text(${1:Font size}, ${2:Content})",
+		"body": "_text(${1:Font size},/#${2:Content}#/)",
 		"description": "Text"
 	},
 	"Flex box": {
