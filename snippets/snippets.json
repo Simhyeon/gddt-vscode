@@ -11,7 +11,7 @@
 		"body": [
 			"_if_mod(${1:mod})",
 			"\t${2:Content}",
-			"_fi_end()"
+			"_fi_mod()"
 		],
 		"description": "If mod"
 	},
@@ -22,7 +22,7 @@
 			"\t${2:Content}",
 			"_elif_mod(${3:mod2})",
 			"\t${4:Content2}",
-			"_fi_end()"
+			"_fi_mod()"
 		],
 		"description": "if elif mod"
 	},

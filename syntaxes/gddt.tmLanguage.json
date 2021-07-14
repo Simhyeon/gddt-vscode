@@ -35,7 +35,7 @@
 		"ifmod": {
 			"patterns": [{
 				"name": "keyword.control.gddt",
-				"match": "\\b(_if_mod|_elif_mod|_fi_mod)"
+				"match": "\\b(_fi_mod|_if_modc|_if_mod|_elif_mod)"
 			}]
 		},
 		"otherkeys": {
