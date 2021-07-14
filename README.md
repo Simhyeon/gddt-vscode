@@ -1,8 +1,7 @@
 # gddt README
 
-This is a vs code extension for gddt format. This doesn't do any gdmarp
-specific actions by itself and should be used with gdmarp extension to fully
-utilize the program.
+This is a vs code extension for gddt format. This doesn't do any gdmarp specific
+actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Features
 
@@ -10,6 +9,12 @@ utilize the program.
 - Snippets
 
 ## Release Notes
+
+### 0.0.2
+
+- Changed if mod syntax to _fi_mod
+- Fixed typos in ul and ol snippet
+- Added string literal snippet with syntax highlighting 
 
 ### 0.0.1
 
