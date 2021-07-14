@@ -10,6 +10,10 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.0.3
+
+- If mod single macro added for snippet
+
 ### 0.0.2
 
 - Changed if mod syntax to _fi_mod

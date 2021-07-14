@@ -1,10 +1,17 @@
 {
+	"If mod content": {
+		"prefix": ["ifmodc", "_if_modc"],
+		"body": [
+			"_if_modc(${1:mod},${2:Content})"
+		],
+		"description": "If mod content(Single macro)"
+	},
 	"If mod": {
 		"prefix": ["ifmod", "_if_mod"],
 		"body": [
 			"_if_mod(${1:mod})",
 			"\t${2:Content}",
-			"_if_end()"
+			"_fi_end()"
 		],
 		"description": "If mod"
 	},
@@ -15,7 +22,7 @@
 			"\t${2:Content}",
 			"_elif_mod(${3:mod2})",
 			"\t${4:Content2}",
-			"_if_end()"
+			"_fi_end()"
 		],
 		"description": "if elif mod"
 	},
@@ -42,7 +49,7 @@
 	"Random text": {
 		"prefix": ["randtext", "_rand_text"],
 		"body": "_rand_text(${1:Character count})",
-		"description": "Rnadom text"
+		"description": "Random text"
 	},
 	"Web api": {
 		"prefix": ["wapi", "_wapi"],
