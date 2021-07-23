@@ -76,6 +76,31 @@
 		"body": "_h${1:Level}(${2:Content})",
 		"description": "Header"
 	},
+	"Header1": {
+		"prefix": ["h1", "_h1"],
+		"body": "_h1(${1:Content})",
+		"description": "Header1"
+	},
+	"Header2": {
+		"prefix": ["h2", "_h2"],
+		"body": "_h2(${1:Content})",
+		"description": "Header2"
+	},
+	"Header3": {
+		"prefix": ["h3", "_h3"],
+		"body": "_h3(${1:Content})",
+		"description": "Header3"
+	},
+	"Header4": {
+		"prefix": ["h4", "_h4"],
+		"body": "_h4(${1:Content})",
+		"description": "Header4"
+	},
+	"Header5": {
+		"prefix": ["h5", "_h5"],
+		"body": "_h5(${1:Content})",
+		"description": "Header5"
+	},
 	"Unordered list": {
 		"prefix": ["ul", "_ul"],
 		"body": "_ul(${1:Level}) ${2:Content}",
@@ -632,5 +657,84 @@
 		"prefix": ["_call_sidebar", "callsidebar"],
 		"body": "_call_sidebar(${1:Sidbar ID})",
 		"description": "Call sidebar"
+	},
+	"Dialogue directives": {
+		"prefix": ["_dial_begin", "dialogue"],
+		"body": [
+			"_dial_begin()",
+			"\t${1:Content}",
+			"_dial_end()"
+		],
+		"description": "Dialogue directive"
+	},
+	"Dialogue node": {
+		"prefix": ["_dnode", "dnode"],
+		"body": [
+			"_dnode(${1:id},${2:node type},${3:goto}",
+			"\t${4:content}",
+			")"
+		],
+		"description": "Dialogue node"
+	},
+	"Text node": {
+		"prefix": ["_dnode_text", "dnodetext"],
+		"body": [
+			"_dnode(${1:id},text,${2:goto}",
+			"\t_dspeaker(${3:speaker})",
+			"\t_dtext(/#${4:text}#/)",
+			")"
+		],
+		"description": "Text node"
+	},
+	"Selection node": {
+		"prefix": ["_dnode_selection", "dnodeselection"],
+		"body": [
+			"_dnode(${1:id},selection,${2:goto}",
+			"\t_dspeaker(${3:speaker})",
+			"\t_dtext(/#${4:text}#/)",
+			"\t_div(",
+			"\t\t_div_sel(${5:goto},${6:text})",
+			"\t\t${7:selections}",
+			"\t)",
+			")"
+		],
+		"description": "Selection node"
+	},
+	"Branch node": {
+		"prefix": ["_dnode_branch", "dnodebranch"],
+		"body": [
+			"_dnode(${1:id},branch,null",
+			"\t_div(",
+			"\t\t_div_branch(${2:goto},${3:target},${4:qualification})",
+			"\t\t${5:branches}",
+			"\t)",
+			")"
+		],
+		"description": "Branch node"
+	},
+	"Dialogue speaker": {
+		"prefix": ["_dspeaker", "dspeaker"],
+		"body" :"_dspeaker(${1:speaker})",
+		"description": "Dialogue speaker"
+	},
+	"Dialogue text": {
+		"prefix": ["_dtext", "dtext"],
+		"body" :"_dtext(/#${1:text}#/)",
+		"description": "Dialogue text"
+	},
+	"Diverion group": {
+		"prefix": ["_div", "div"],
+		"body": ["_div(", "\t${1:Content}", ")"],
+		"description": "Diversion group"
+	},
+	"Diversion selection ": {
+		"prefix": ["_div_sel", "divsel"],
+		"body" :"_div_sel(${1:goto},/#${2:text}#/)",
+		"description": "Diversion selection"
+	},
+	"Diversion branch ": {
+		"prefix": ["_div_branch", "divbranch"],
+		"body" :"_div_branch(${1:goto},${2:target},${3:qualification})",
+		"description": "Diversion branch"
 	}
 }

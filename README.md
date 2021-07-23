@@ -10,6 +10,11 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.0.4
+
+- Added headers macro for separte levels
+- Added dialogue macros
+
 ### 0.0.3
 
 - If mod single macro added for snippet
