@@ -1,4 +1,25 @@
 {
+	"From": {
+		"prefix": ["from", "_from"],
+		"body": [
+			"_from(${1:MacroName},${2:CSV})"
+		],
+		"description": "Generate macros from raw csv data"
+	},
+	"From varaiable": {
+		"prefix": ["_from_var", "fromvar"],
+		"body": [
+			"_from_var(${1:Macro name},${2:Variable})"
+		],
+		"description": "Generate macros from csv formatted varaible"
+	},
+	"From file": {
+		"prefix": ["_from_file", "fromfile"],
+		"body": [
+			"_from_file(${1:Macro name},${2:File path})"
+		],
+		"description": "Generate macrso from csv file"
+	},
 	"If mod content": {
 		"prefix": ["ifmodc", "_if_modc"],
 		"body": [
@@ -38,7 +59,16 @@
 	},
 	"Set variable": {
 		"prefix": ["setvar", "_set_var"],
-		"body": "_set_var(`${1:Name}',`${2:Content}')dnl",
+		"body": "_set_var(`v_${1:Name}',`${2:Content}')dnl",
+		"description": "Set variable"
+	},
+	"Set variable as csv format": {
+		"prefix": ["setvarcsv", "_set_var_csv"],
+		"body": [
+			"_set_var(`v_${1:Name}',`/#",
+			"${2:CSV}",
+			"#/')dnl"
+		],
 		"description": "Set variable"
 	},
 	"Include file": {
@@ -100,6 +130,11 @@
 		"prefix": ["h5", "_h5"],
 		"body": "_h5(${1:Content})",
 		"description": "Header5"
+	},
+	"Table of content": {
+		"prefix": ["toc", "_toc"],
+		"body": "_toc(${1:PageNumber},${Text}",
+		"description": "Table of contents"
 	},
 	"Unordered list": {
 		"prefix": ["ul", "_ul"],
