@@ -10,6 +10,12 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.0.5
+
+- Added from macros
+- Added toc macros for marp module
+- Changed setvar behaviour a little bit for ergonomics
+
 ### 0.0.4
 
 - Added headers macro for separte levels
@@ -29,7 +35,7 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 Initial release with syntax highlighting and snippets
 
-## Planned updates
+## Planned updates (0.1)
 
 - Intellisense with hover information
 - Simple error outputs for common mistakes
