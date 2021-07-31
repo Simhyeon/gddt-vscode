@@ -59,15 +59,15 @@
 	},
 	"Set variable": {
 		"prefix": ["setvar", "_set_var"],
-		"body": "_set_var(`v_${1:Name}',`${2:Content}')dnl",
+		"body": "_set_var(v_${1:Name},${2:Content})dnl",
 		"description": "Set variable"
 	},
 	"Set variable as csv format": {
 		"prefix": ["setvarcsv", "_set_var_csv"],
 		"body": [
-			"_set_var(`v_${1:Name}',`/#",
+			"_set_var(v_${1:Name},/#",
 			"${2:CSV}",
-			"#/')dnl"
+			"#/)dnl"
 		],
 		"description": "Set variable"
 	},
@@ -771,5 +771,29 @@
 		"prefix": ["_div_branch", "divbranch"],
 		"body" :"_div_branch(${1:goto},${2:target},${3:qualification})",
 		"description": "Diversion branch"
+	},
+	"Flowchart directive": {
+		"prefix": ["_flowchart_begin", "flowchartbegin"],
+		"body": [
+			"_flowchart_begin()",
+			"\t${1:Content}",
+			"_flowchart_end()"
+		],
+		"description": "Flowchart directive"
+	},
+	"Flowchart node": {
+		"prefix": ["_fnode", "fnode"],
+		"body" :"_fnode(${1:id},${2:label},${3:next id})",
+		"description": "Flowchart node"
+	},
+	"Flowchart condition node": {
+		"prefix": ["_fnode_cond", "fnodecond"],
+		"body" :"_fnode(${1:id},${2:label},${3:next id})",
+		"description": "Flowchart condition node"
+	},
+	"Flowchart input node": {
+		"prefix": ["_fnode_input", "fnodeinput"],
+		"body" :"_fnode_input(${1:id},${2:label})",
+		"description": "Flowchart input node"
 	}
 }
