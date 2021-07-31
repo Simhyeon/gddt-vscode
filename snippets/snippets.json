@@ -788,7 +788,7 @@
 	},
 	"Flowchart condition node": {
 		"prefix": ["_fnode_cond", "fnodecond"],
-		"body" :"_fnode(${1:id},${2:label},${3:next id})",
+		"body" :"_fnode_cond(${1:id},${2:label},${3:yes next id},${4:no next id})",
 		"description": "Flowchart condition node"
 	},
 	"Flowchart input node": {
