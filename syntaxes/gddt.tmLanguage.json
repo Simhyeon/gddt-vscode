@@ -3,74 +3,47 @@
 	"name": "gddt",
 	"patterns": [
 		{
-			"include": "#ifmod"
-		},
-		{
-			"include": "#otherkeys"
+			"include": "#definition"
 		},
 		{
 			"include": "#macro"
 		},
 		{
-			"include": "#internalMacro"
-		},
-		{
-			"include": "#m4quote"
-		},
-		{
-			"include": "#variable"
-		},
-		{
-			"include": "#comment"
-		},
-		{
-			"include": "#stringLiteral"
+			"include": "#literal"
 		}
 	],
 	"repository": {
-		"comment": {
-			"name": "comment.line.double-slash",
-			"match": "\/\/.*"
-		},
-		"ifmod": {
-			"patterns": [{
-				"name": "keyword.control.gddt",
-				"match": "\\b(_fi_mod|_if_modc|_if_mod|_elif_mod)"
-			}]
-		},
-		"otherkeys": {
-			"patterns": [{
-				"name": "keyword.other.gddt",
-				"match": "\\b(_set_var|_inc|_cc)"
-			}]
-		},
-		"macro": {
-			"name": "support.function.gddt",
-			"match": "\\b_[^ (\n]*"
-		},
-		"internalMacro": {
-			"name": "support.function.gddt",
-			"match": "\\bm_[^ (\n]*"
-		},
-		"m4quote": {
-			"name": "string.quoted.other",
-			"begin": "`",
-			"end": "'",
-			"patterns": [
+		"definition": {
+			"begin": "(\\$define)\\(",
+			"end": "(=)"
+			,"captures": {
+				"1": {"name": "keyword.operator.new.r4d"}
+			}
+			,"patterns": [
 				{
-					"name":"support.constant.gddt",
-					"match": "\\bv_[^ (\n`']*"
+					"match": "[\\s\\r\\n]*([a-zA-Z0-9_]*)\\s*,",
+					"captures": {
+						"1": {"name": "support.class.r4d"}
+					}
+				},
+				{
+					"match": "([^,=][a-zA-Z0-9_\\s]*)",
+					"captures": {
+						"1": {"name": "support.function.r4d"}
+					}
 				}
 			]
 		},
-		"variable" : {
-			"name":"support.constant.gddt",
-			"match": "\\bv_[^ (\n`']*"
+		"macro": {
+			"match": "(\\$[a-zA-Z0-9_]*[\\*\\^\\?\\|\\+]*)\\(",
+			"captures": {
+				"1": {"name": "support.function.r4d"}
+			}
 		},
-		"stringLiteral" : {
-			"name":"string.quoted.other",
-			"begin": "/#",
-			"end": "#/"
+		"literal": {
+			"name": "support.constant.r4d",
+			"begin": "\\\\\\*",
+			"end": "\\*\\\\"
 		}
 	},
 	"scopeName": "source.gddt"

@@ -43,6 +43,10 @@
             {
                 "language": "gddt",
                 "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "gddt",
+                "path": "./snippets/snippets_r4d.json"
             }
         ]
     }

@@ -1,549 +1,409 @@
 {
-	"From": {
-		"prefix": ["from", "_from"],
-		"body": [
-			"_from(${1:MacroName},${2:CSV})"
-		],
-		"description": "Generate macros from raw csv data"
-	},
-	"From varaiable": {
-		"prefix": ["_from_var", "fromvar"],
-		"body": [
-			"_from_var(${1:Macro name},${2:Variable})"
-		],
-		"description": "Generate macros from csv formatted varaible"
-	},
-	"From file": {
-		"prefix": ["_from_file", "fromfile"],
-		"body": [
-			"_from_file(${1:Macro name},${2:File path})"
-		],
-		"description": "Generate macrso from csv file"
-	},
-	"If mod content": {
-		"prefix": ["ifmodc", "_if_modc"],
-		"body": [
-			"_if_modc(${1:mod},${2:Content})"
-		],
-		"description": "If mod content(Single macro)"
-	},
 	"If mod": {
-		"prefix": ["ifmod", "_if_mod"],
+		"prefix": ["$if_mod", "if_mod"],
 		"body": [
-			"_if_mod(${1:mod})",
-			"\t${2:Content}",
-			"_fi_mod()"
+			"\\$if_mod(${1:mod},${2:Content})"
 		],
-		"description": "If mod"
-	},
-	"If elif mode": {
-		"prefix": ["ifelmod"],
-		"body": [
-			"_if_mod(${1:mod1})",
-			"\t${2:Content}",
-			"_elif_mod(${3:mod2})",
-			"\t${4:Content2}",
-			"_fi_mod()"
-		],
-		"description": "if elif mod"
-	},
-	"elif mod": {
-		"prefix": ["elifmod", "_elif_mod"],
-		"body": "_elif_mod(${1:mod})",
-		"description": "elif mod"
-	},
-	"Repeat": {
-		"prefix": ["rep", "_repeat"],
-		"body": "_repeat(${1:Count}, ${2:Content})",
-		"description": "Repeat"
-	},
-	"Set variable": {
-		"prefix": ["setvar", "_set_var"],
-		"body": "_set_var(v_${1:Name},${2:Content})dnl",
-		"description": "Set variable"
-	},
-	"Set variable as csv format": {
-		"prefix": ["setvarcsv", "_set_var_csv"],
-		"body": [
-			"_set_var(v_${1:Name},/#",
-			"${2:CSV}",
-			"#/)dnl"
-		],
-		"description": "Set variable"
-	},
-	"Include file": {
-		"prefix": ["inc", "_inc"],
-		"body": "_inc(${1:fileName})",
-		"description": "Include other files"
-	},
-	"Random text": {
-		"prefix": ["randtext", "_rand_text"],
-		"body": "_rand_text(${1:Character count})",
-		"description": "Random text"
-	},
-	"Web api": {
-		"prefix": ["wapi", "_wapi"],
-		"body": "_wapi(${1:URL}, ${2:JQ query})",
-		"description": "Web api"
-	},
-	"Web csv": {
-		"prefix": ["wcsv", "_wcsv"],
-		"body": "_wcsv(${1:URL}, ${2:JQ query})",
-		"description": "Web csv"
-	},
-	"SQL query": {
-		"prefix": ["_sql_query", "sqlquery"],
-		"body": "_sql_query(${1:csv path}, ${2:table name}, ${3:SQL query string}, ${4:SQLite path})",
-		"description": "Get return value from sql query"
-	},
-	"SQL table": {
-		"prefix": ["_sql_table", "sqltable"],
-		"body": "_sql_table(${1:csv path}, ${2:table name}, ${3:SQL query string})",
-		"description": "Convert sql query result into table"
-	},
-	"Header": {
-		"prefix": ["h", "_h"],
-		"body": "_h${1:Level}(${2:Content})",
-		"description": "Header"
+		"description": "If mod then print"
 	},
 	"Header1": {
-		"prefix": ["h1", "_h1"],
-		"body": "_h1(${1:Content})",
+		"prefix": ["h1", "$h1"],
+		"body": "\\$h1(${1:Content})",
 		"description": "Header1"
 	},
 	"Header2": {
-		"prefix": ["h2", "_h2"],
-		"body": "_h2(${1:Content})",
+		"prefix": ["h2", "$h2"],
+		"body": "\\$h2(${1:Content})",
 		"description": "Header2"
 	},
 	"Header3": {
-		"prefix": ["h3", "_h3"],
-		"body": "_h3(${1:Content})",
+		"prefix": ["h3", "$h3"],
+		"body": "\\$h3(${1:Content})",
 		"description": "Header3"
 	},
 	"Header4": {
-		"prefix": ["h4", "_h4"],
-		"body": "_h4(${1:Content})",
+		"prefix": ["h4", "$h4"],
+		"body": "\\$h4(${1:Content})",
 		"description": "Header4"
 	},
 	"Header5": {
-		"prefix": ["h5", "_h5"],
-		"body": "_h5(${1:Content})",
+		"prefix": ["h5", "$h5"],
+		"body": "\\$h5(${1:Content})",
 		"description": "Header5"
 	},
-	"Table of content": {
-		"prefix": ["toc", "_toc"],
-		"body": "_toc(${1:PageNumber},${Text}",
-		"description": "Table of contents"
-	},
 	"Unordered list": {
-		"prefix": ["ul", "_ul"],
-		"body": "_ul(${1:Level}) ${2:Content}",
+		"prefix": ["ul", "$ul"],
+		"body": "\\$ul(${1:Level}) ${2:Content}",
 		"description": "Unordered list"
 	},
 	"Ordered list": {
-		"prefix": ["ol", "_ol"],
-		"body": "_ol(${1:Level}) ${2:Content}",
+		"prefix": ["ol", "$ol"],
+		"body": "\\$ol(${1:Level}) ${2:Content}",
 		"description": ""
 	},
 	"Bold": {
-		"prefix": ["b", "_b"],
-		"body": "_b(${1:Content})",
+		"prefix": ["b", "$b"],
+		"body": "\\$b(${1:Content})",
 		"description": "Bold"
 	},
 	"Italic": {
-		"prefix": ["i", "_i"],
-		"body": "_i(${1:Content})",
+		"prefix": ["i", "$i"],
+		"body": "\\$i(${1:Content})",
 		"description": "Italic"
 	},
 	"Bold italic": {
-		"prefix": ["bi", "_bi"],
-		"body": "_bi(${1:Content})",
+		"prefix": ["bi", "$bi"],
+		"body": "\\$bi(${1:Content})",
 		"description": "Bold italic"
 	},
 	"Strikethrough": {
-		"prefix": ["st", "_st"],
-		"body": "_st(${1:Content})",
+		"prefix": ["st", "$st"],
+		"body": "\\$st(${1:Content})",
 		"description": "Strikethrough"
 	},
 	"Underline": {
-		"prefix": ["ud", "_ud"],
-		"body": "_ud(${1:Content})",
+		"prefix": ["ud", "$ud"],
+		"body": "\\$ud(${1:Content})",
 		"description": "Underline"
 	},
 	"Indentation": {
-		"prefix": ["idt", "_idt"],
-		"body": "_idt(${1:Indent level})",
+		"prefix": ["idt", "$idt"],
+		"body": "\\$idt(${1:Indent level})",
 		"description": "Indentation"
 	},
-	"Csv table from path": {
-		"prefix": ["_csv", "csv"],
-		"body": "_csv(${1:csv file Path})",
-		"description": "Csv table from path"
-	},
-	"Raw csv": {
-		"prefix": ["_rcsv", "rcsv"],
-		"body": "_rcsv(${1:csv content})",
-		"description": "Raw csv"
-	},
 	"Link/Url": {
-		"prefix": ["_url", "url", "link"],
-		"body": "_url(${1:Address}, ${2:Alternate text})",
+		"prefix": ["$url", "url"],
+		"body": "\\$url(${1:Address}, ${2:Text})",
 		"description": "Link or url"
 	},
 	"Image": {
-		"prefix": ["_img", "img", "image"],
-		"body": "_img(${1:Path}, ${2:Alternate text})",
+		"prefix": ["image", "$image"],
+		"body": "\\$img(${1:Source})",
 		"description": "Image"
 	},
 	"Webui image": {
-		"prefix": ["_wimg", "wimg", "web image"],
-		"body": "_img(${1:Path},${2:Alternate text},${3:ID},${4:Size})",
+		"prefix": ["$wimage", "wimage"],
+		"body": "\\$img(${1:Source},${2:ID},${3:Size})",
 		"description": "Webui image"
 	},
-	"Images": {
-		"prefix": ["_imgs", "imgs", "images"],
-		"body": "_imgs(${1:Paths})",
-		"description": "Images"
-	},
 	"Sized images": {
-		"prefix": ["_simgs", "simgs", "sizedimages"],
-		"body": "_simgs(${1:Size}, ${2:Paths})",
+		"prefix": ["$simage", "simage"],
+		"body": "\\$simage(${1:Source},${2:Max width})",
 		"description": "Sized images"
 	},
-	"Fixed image": {
-		"prefix": ["_fimg", "fimg", "fixedimage"],
-		"body": "_fimg(${1:Path},${2:Alternate text},${3:Top},${4:Left},${5:Width})",
-		"description": "Fixed image"
-	},
-	"Compress image": {
-		"prefix": ["_comp", "comp"],
-		"body": "_comp(${1:path})",
-		"description": "Compress image"
-	},
-	"String": {
-		"prefix": ["str"],
-		"body": "/#${1:String literal}#/",
-		"description": "String literal"
-	},
 	"Text": {
-		"prefix": ["_text", "text"],
-		"body": "_text(${1:Font size},/#${2:Content}#/)",
+		"prefix": ["$text", "text"],
+		"body": "\\$text(${1:Font size},${2:Content})",
 		"description": "Text"
 	},
 	"Flex box": {
-		"prefix": ["_fbox", "fbox"],
-		"body": "_fbox(${1:Content})",
+		"prefix": ["$fbox", "fbox"],
+		"body": "\\$fbox(${1:Content})",
 		"description": "Flex box"
 	},
 	"Font size flex box": {
-		"prefix": ["_ffbox", "ffbox"],
-		"body": "_ffbox(${1:Font size},${2:Content})",
+		"prefix": ["$ffbox", "ffbox"],
+		"body": "\\$ffbox(${1:Font size},${2:Content})",
 		"description": "Font size flex box"
 	},
 	"Class": {
-		"prefix": ["_cls", "cls", "class"],
-		"body": "_cls(${1:Class name})",
+		"prefix": ["$class", "class"],
+		"body": "\\$class(${1:Class name})",
 		"description": "Class"
 	},
 	"Title": {
-		"prefix": ["_title", "title"],
-		"body": "_title(${1:Main title},${2:Sub title})",
+		"prefix": ["$title", "title"],
+		"body": "\\$title(${1:Main title},${2:Sub title})",
 		"description": "Title"
 	},
 	"Split slide": {
-		"prefix": ["split", "_split"],
+		"prefix": ["split", "$split"],
 		"body": [
-			"_left()",
+			"\\$left()",
 			"\t${1:Left Content}",
-			"_right()",
+			"\\$right()",
 			"\t${2:Right Content}",
-			"_end()"
+			"\\$end()"
 		],
 		"description": "Split slide"
 	},
 	"Center": {
-		"prefix": ["_center", "center"],
-		"body": "_center(${1:Content})",
+		"prefix": ["$center", "center"],
+		"body": "\\$center(${1:Content})",
 		"description": "Center marp content"
 	},
 	"Wiki page": {
-		"prefix": ["_wiki_page", "wikipage"],
-		"body": "_wiki_page(${1:Address})",
+		"prefix": ["$wiki_page", "wiki_page"],
+		"body": "\\$wiki_page(${1:Address})",
 		"description": "Wiki page"
 	},
 	"Wiki page with alt text": {
-		"prefix": ["_wiki_page_alt", "wikipagealt"],
-		"body": "_wiki_page(${1:Address}, ${2:Alternate text})",
+		"prefix": ["$wiki_page_alt", "wiki_page_alt"],
+		"body": "\\$wiki_page_alt(${1:Address}, ${2:Alternate text})",
 		"description": "Wiki page with alt text"
 	},
 	"Html Table": {
-		"prefix": ["_table", "table"],
+		"prefix": ["build_table"],
 		"body": [
-			"_ts()",
-			"_tfont(${1:Header font}, ${2:Rows font})",
-			"_th(${3:Headers})",
-			"_tr(${4:Rows})",
-			"_te()"
+			"\\$tstart()",
+			"\\$tfont(${1:Header font}, ${2:Rows font})",
+			"\\$theader(${3:Headers})",
+			"\\$trow(${4:Rows})",
+			"\\$tend()"
 		],
-		"description": "Html table"
+		"description": "Build table with specific options"
 	},
 	"New page": {
-		"prefix": ["_new_page", "np", "new_page"],
-		"body": "_new_page()",
+		"prefix": ["newpage", "np", "$newpage"],
+		"body": "\\$newpage()",
 		"description": "New page"
 	},
 	"Styles": {
-		"prefix": ["_styles", "styles"],
-		"body": "_styles(${1:CSS files})",
+		"prefix": ["$styles", "styles"],
+		"body": "\\$styles(${1:CSS files})",
 		"description": "Styles"
 	},
 	"UI begin/end": {
-		"prefix": ["_ui", "ui"],
+		"prefix": ["$ui", "ui"],
 		"body": [
-			"_ui_begin(${1:Page Title})",
+			"\\$ui_begin()",
 			"\t${2:Content}",
-			"_ui_end()"
+			"\\$ui_end()"
 		],
 		"description": "UI begin/end"
 	},
 	"Script begin/end": {
-		"prefix": ["_script", "script"],
+		"prefix": ["$script", "script"],
 		"body": [
-			"_script_begin()",
+			"\\$script_begin()",
 			"\t${1:Content}",
-			"_script_end()"
+			"\\$script_end()"
 		],
 		"description": "Script begin/end"
 	},
 	"Top space": {
-		"prefix": ["_top", "top"],
+		"prefix": ["$top", "top"],
 		"body": [
-			"_top space(",
-			"\t_top_left(${1:Top left content})",
+			"\\$top space(",
+			"\t\\$top_left(${1:Top left content})",
 			"",
-			"\t_top_center(${2:Top center content})",
+			"\t\\$top_center(${2:Top center content})",
 			"",
-			"\t_top_right(${3:Top right content})",
+			"\t\\$top_right(${3:Top right content})",
 			")"
 		],
 		"description": "Top space"
 	},
 	"Bottom space": {
-		"prefix": ["_bot", "bot"],
+		"prefix": ["$bot", "bot"],
 		"body": [
-			"_bot space(",
-			"\t_bot_left(${1:Bot left content})",
+			"\\$bot space(",
+			"\t\\$bot_left(${1:Bot left content})",
 			"",
-			"\t_bot_center(${2:Bot center content})",
+			"\t\\$bot_center(${2:Bot center content})",
 			"",
-			"\t_bot_right(${3:Bot right content})",
+			"\t\\$bot_right(${3:Bot right content})",
 			")"
 		],
 		"description": "Bottom space"
 	},
 	"Container": {
-		"prefix": ["_container", "container"],
+		"prefix": ["$container", "container"],
 		"body": [
-			"_container(",
+			"\\$container(",
 			"\t${1:Content}",
 			")"
 		],
 		"description": "Container"
 	},
 	"Vertical Container": {
-		"prefix": ["_vcontainer", "vcontainer"],
+		"prefix": ["$vcontainer", "vcontainer"],
 		"body": [
-			"_vcontainer(",
+			"\\$vcontainer(",
 			"\t${1:Content}",
 			")"
 		],
 		"description": "Vertical container"
 	},
 	"Container header": {
-		"prefix": ["_header", "header"],
+		"prefix": ["$header", "header"],
 		"body": [
-			"_header(",
+			"\\$header(",
 			"\t${1:Content}",
 			")"
 		],
 		"description": "Container header"
 	},
 	"Container footer": {
-		"prefix": ["_footer", "footer"],
+		"prefix": ["$footer", "footer"],
 		"body": [
-			"_footer(",
+			"\\$footer(",
 			"\t${1:Content}",
 			")"
 		],
 		"description": "Container footer"
 	},
 	"Content": {
-		"prefix": ["_content", "content"],
+		"prefix": ["$content", "content"],
 		"body": [
-			"_content(${1:ID},${2:Width},",
+			"\\$content(${1:ID},${2:Width},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Content"
 	},
 	"Content center": {
-		"prefix": ["_content_center", "contentcenter"],
+		"prefix": ["$content_center", "content_center"],
 		"body": [
-			"_content_center(${1:ID},${2:Width},",
+			"\\$content_center(${1:ID},${2:Width},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Content center"
 	},
 	"Content scroll": {
-		"prefix": ["_content_scroll", "contentscroll"],
+		"prefix": ["$content_scroll", "content_scroll"],
 		"body": [
-			"_content_scroll(${1:ID},${2:Width},",
+			"\\$content_scroll(${1:ID},${2:Width},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Content"
 	},
 	"Vertical content": {
-		"prefix": ["_vcontent", "vcontent"],
+		"prefix": ["$vcontent", "vcontent"],
 		"body": [
-			"_vcontent(${1:ID},${2:Height},",
+			"\\$vcontent(${1:ID},${2:Height},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content"
 	},
 	"Vertical content center": {
-		"prefix": ["_vcontent_center", "vcontentcenter"],
+		"prefix": ["$vcontent_center", "vcontent_center"],
 		"body": [
-			"_vcontent_center(${1:ID},${2:Height},",
+			"\\$vcontent_center(${1:ID},${2:Height},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content center"
 	},
 	"Vertical content scroll": {
-		"prefix": ["_vcontent_scroll", "vcontentscroll"],
+		"prefix": ["$vcontent_scroll", "vcontent_scroll"],
 		"body": [
-			"_vcontent_scroll(${1:ID},${2:Height},",
+			"\\$vcontent_scroll(${1:ID},${2:Height},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical content scroll"
 	},
 	"Text input": {
-		"prefix": ["_tinput", "tinput"],
-		"body": "_tinput(${1:ID},${2:Placeholder})",
+		"prefix": ["$tinput", "tinput"],
+		"body": "\\$tinput(${1:ID},${2:Placeholder})",
 		"description": "Text input"
 	},
 	"Text input with label": {
-		"prefix": ["_tinput_label", "tinputlabel"],
-		"body": "_tinput_label(${1:ID},${2:Placeholder},${3:Label})",
+		"prefix": ["\\$tinput_label", "tinput_label"],
+		"body": "\\$tinput_label(${1:ID},${2:Placeholder},${3:Label})",
 		"description": "Text input with label"
 	},
 	"Number input": {
-		"prefix": ["_ninput", "ninput"],
-		"body": "_ninput(${1:ID},${2:Placeholder number})",
+		"prefix": ["$ninput", "ninput"],
+		"body": "\\$ninput(${1:ID},${2:Placeholder number})",
 		"description": "Number input"
 	},
 	"Number input with label": {
-		"prefix": ["_ninput_label", "ninputlabel"],
-		"body": "_ninput_label(${1:ID},${2:Placeholder number},${3:Label})",
+		"prefix": ["$ninput_label", "ninput_label"],
+		"body": "\\$ninput_label(${1:ID},${2:Placeholder number},${3:Label})",
 		"description": "Number input with label"
 	},
 	"Inline group": {
-		"prefix": ["_inline", "inline"],
+		"prefix": ["$inline", "inline"],
 		"body": [
-			"_inline(",
+			"\\$inline(",
 			"\t${1:Content}",
 			")"
 		],
 		"description": "Inline group"
 	},
 	"Switch": {
-		"prefix": ["_switch", "switch"],
-		"body": "_switch(${1:ID},${2:Content})",
+		"prefix": ["$switch", "switch"],
+		"body": "\\$switch(${1:ID},${2:Label})",
 		"description": "Switch"
 	},
 	"Selection": {
-		"prefix": ["_sel", "sel"],
+		"prefix": ["$sel", "sel"],
 		"body": [
-			"_sel(${1:ID},",
-			"\t_sel_item(${2:Value})",
+			"\\$sel(${1:ID},",
+			"\t(${2:Selection labels})",
 			")"
 		],
 		"description": "Selection"
 	},
-	"Selection item": {
-		"prefix": ["_sel_item", "sel_item"],
-		"body": "_sel_item(${1:Value})",
-		"description": "Selection item"
-	},
 	"Radio group": {
-		"prefix": ["_radio", "radio"],
-		"body": "_radio(${1:ID}, ${2:Label array})",
+		"prefix": ["$radio", "radio"],
+		"body": "\\$radio(${1:ID}, ${2:Radio labels})",
 		"description": "Radio group"
 	},
 	"Checkbox": {
-		"prefix": ["_checkbox", "checkbox"],
-		"body": "_checkbox(${1:ID},${2:Content})",
+		"prefix": ["$checkbox", "checkbox"],
+		"body": "\\$checkbox(${1:ID},${2:Label})",
 		"description": "Checkbox"
 	},
 	"Range": {
-		"prefix": ["_range", "range"],
-		"body": "_range(${1:ID},${2:Label},${3:Min},${4:Max})",
+		"prefix": ["$range", "range"],
+		"body": "\\$range(${1:ID},${2:Label},${3:Min},${4:Max})",
 		"description": "Range"
 	},
 	"Icon": {
-		"prefix": ["_icon", "icon"],
-		"body": "_icon(${1:Icon type})",
+		"prefix": ["$icon", "icon"],
+		"body": "\\$icon(${1:Icon type})",
 		"description": "Icon"
 	},
 	"Paragraph": {
-		"prefix": ["_p", "p"],
-		"body": "_p(${1:Content})",
+		"prefix": ["$p", "p"],
+		"body": "\\$p(${1:Content})",
 		"description": "Paragraph"
 	},
 	"Button": {
-		"prefix": ["_btn", "btn"],
-		"body": "_btn(${1:ID},${2:Label})",
+		"prefix": ["$btn", "btn"],
+		"body": "\\$btn(${1:ID},${2:Label})",
 		"description": "Button"
 	},
 	"Label": {
-		"prefix": ["_label", "label"],
-		"body": "_label(${1:ID},${2:Content})",
+		"prefix": ["$label", "label"],
+		"body": "\\$label(${1:ID},${2:Content})",
 		"description": "Label"
 	},
 	"Label center": {
-		"prefix": ["_label_center", "labelcenter"],
-		"body": "_label_center(${1:ID},${2:Content})",
+		"prefix": ["$label_center", "label_center"],
+		"body": "\\$label_center(${1:ID},${2:Content})",
 		"description": "Label center"
 	},
 	"Grid group": {
-		"prefix": ["_grid", "grid"],
+		"prefix": ["$grid", "grid"],
 		"body": [
-			"_grid(${1:ID},${2:Row count},",
-			"\t_grid_cell(${3:ID},${4:Content})",
+			"\\$grid(${1:ID},${2:Row count},",
+			"\t\\$grid_cell(${3:ID},${4:Content})",
 			")"
 		],
 		"description": "Grid group"
 	},
 	"Grid cell": {
-		"prefix": ["_grid_cell", "gridcell"],
-		"body": "_grid_cell(${1:ID},${2:Content})",
+		"prefix": ["$grid_cell", "grid_cell"],
+		"body": "\\$grid_cell(${1:ID},${2:Content})",
 		"description": "Grid cell"
 	},
 	"Swap buttons": {
-		"prefix": ["_swap_buttons", "swapbuttons"],
-		"body": "_swap_buttons(${1:ID},${2:Label array})",
+		"prefix": ["$swap_buttons", "swap_buttons"],
+		"body": "\\$swap_buttons(${1:ID},${2:Label array})",
 		"description": "Swap buttons"
 	},
 	"Swap area": {
-		"prefix": ["swaparea"],
+		"prefix": ["swaparea", "$swaparea"],
 		"body": [
-			"_content(${1:Parent ID},100%,",
-			"\t_swap_item(${2:ID},${1:Parent ID},",
+			"\\$content(${1:Parent ID},100%,",
+			"\t\\$swap_item(${2:ID},${1:Parent ID},",
 			"\t\t${3:Content}",
 			"\t)",
 			")"
@@ -551,54 +411,54 @@
 		"description": "Swap area"
 	},
 	"Swap item": {
-		"prefix": ["_swap_item", "swapitem"],
+		"prefix": ["$swap_item", "swap_item"],
 		"body": [
-		"_swap_item(${1:ID},${2:Parent ID},",
+		"\\$swap_item(${1:ID},${2:Parent ID},",
 		"\t${3:Content}",
 		")"
 		],
 		"description": "Swap item"
 	},
 	"Card": {
-		"prefix": ["_card", "card"],
+		"prefix": ["$card", "card"],
 		"body": [
-			"_card(${1:ID}, ${2:Title},",
+			"\\$card(${1:ID}, ${2:Title},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Card"
 	},
 	"Card with image": {
-		"prefix": ["_card_img", "cardimg"],
+		"prefix": ["$card_img", "card_img"],
 		"body": [
-			"_card_img(${1:ID},${2:Title},${3:Image url},",
+			"\\$card_img(${1:ID},${2:Title},${3:Image url},",
 			"\t${4:Content}",
 			")"
 		],
 		"description": "Card with image"
 	},
 	"Collection": {
-		"prefix": ["_coll", "coll"],
+		"prefix": ["$coll", "coll"],
 		"body": [
-			"_coll(${1:ID},${2:Loop count},",
+			"\\$coll(${1:ID},${2:Loop count},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Collection"
 	},
 	"Vertical collection": {
-		"prefix": ["_vcoll", "vcoll"],
+		"prefix": ["$vcoll", "vcoll"],
 		"body": [
-			"_vcoll(${1:ID},${2:Loop count},",
+			"\\$vcoll(${1:ID},${2:Loop count},",
 			"\t${3:Content}",
 			")"
 		],
 		"description": "Vertical collection"
 	},
 	"Modal": {
-		"prefix": ["_modal", "modal"],
+		"prefix": ["$modal", "modal"],
 		"body": [
-			"_modal(${1:ID},",
+			"\\$modal(${1:ID},",
 			"\t${2:Modal Header},",
 			"\t${3:Modal Body},",
 			"\t${4:Modal footer}",
@@ -607,193 +467,173 @@
 		"description": "modal"
 	},
 	"Screentouch": {
-		"prefix": ["_screen_touch", "screentouch"],
+		"prefix": ["$screen_touch", "screen_touch"],
 		"body": [
-			"_screentouch(${1:ID},",
+			"\\$screentouch(${1:ID},",
 			"\t${2:Content}",
 			")"
 		],
 		"description": "Screen touch"
 	},
 	"Sidebar left": {
-		"prefix": ["_sidebar_left", "sidebarleft"],
+		"prefix": ["$sidebar_left", "sidebar_left"],
 		"body": [
-			"_sidebar_left(${1:ID},",
+			"\\$sidebar_left(${1:ID},",
 			"\t${2:Content}",
 			")"
 		],
 		"description": "Sidebar left"
 	},
 	"Sidebar right": {
-		"prefix": ["_sidebar_right", "sidebarright"],
+		"prefix": ["$sidebar_right", "sidebar_right"],
 		"body": [
-			"_sidebar_right(${1:ID},",
+			"\\$sidebar_right(${1:ID},",
 			"\t${2:Content}",
 			")"
 		],
 		"description": "Sidebar right"
 	},
 	"Add callback": {
-		"prefix": ["_add_call", "addcall"],
-		"body": "_add_call(${1:Target ID},${2:Event type},${3:Callback})",
+		"prefix": ["$add_call", "add_call"],
+		"body": "\\$add_call(${1:Target ID},${2:Event type},${3:Callback})",
 		"description": "Add callback"
 	},
 	"Add tooltip": {
-		"prefix": ["_add_tooltip", "addtooltip"],
-		"body": "_add_tooltip(${1:Target ID},${2:Content})",
+		"prefix": ["$add_tooltip", "add_tooltip"],
+		"body": "\\$add_tooltip(${1:Target ID},${2:Content})",
 		"description": "Add tooltip"
 	},
-	"Add tooltips": {
-		"prefix": ["_add_tooltips", "addtooltips"],
-		"body": "_add_tooltips(${1:Target ID}|${2:Content2}, ${3:Target ID2}|${4:Content2})",
-		"description": "Add tooltips"
-	},
 	"Call alert": {
-		"prefix": ["_call_alert", "callalert"],
-		"body": "_call_alert(${1:Alert Text})",
+		"prefix": ["$call_alert", "call_alert"],
+		"body": "\\$call_alert(${1:Alert Text})",
 		"description": "Call alert"
 	},
 	"Call toggle": {
-		"prefix": ["_call_toggle", "calltoggle"],
-		"body": "_call_toggle(${1:Target ID})",
+		"prefix": ["$call_toggle", "call_toggle"],
+		"body": "\\$call_toggle(${1:Target ID})",
 		"description": "Call toggle element"
 	},
 	"Call sync text": {
-		"prefix": ["_call_sync_text", "callsynctext"],
-		"body": "_call_sync_text(${1:Target ID})",
+		"prefix": ["$call_sync_text", "call_sync_text"],
+		"body": "\\$call_sync_text(${1:Target ID})",
 		"description": "Call sync text"
 	},
 	"Call visit": {
-		"prefix": ["_call_visit", "callvisit"],
-		"body": "_call_visit(${1:URL address})",
+		"prefix": ["$call_visit", "call_visit"],
+		"body": "\\$call_visit(${1:URL address})",
 		"description": "Call visit"
 	},
 	"Call event": {
-		"prefix": ["_call_event", "callevent"],
-		"body": "_call_event(${1:Target ID},${2:Event type})",
+		"prefix": ["$call_event", "call_event"],
+		"body": "\\$call_event(${1:Target ID},${2:Event type})",
 		"description": "Call event"
 	},
 	"Call update": {
-		"prefix": ["_call_update", "callupdate"],
-		"body": "_call_update(${1:Target ID},${2:Property name},${3:Property value})",
+		"prefix": ["$call_update", "call_update"],
+		"body": "\\$call_update(${1:Target ID},${2:Property name},${3:Property value})",
 		"description": "Call update"
 	},
 	"Call modal": {
-		"prefix": ["_call_modal", "callmodal"],
-		"body": "_call_modal(${1:Modal ID})",
+		"prefix": ["$call_modal", "call_modal"],
+		"body": "\\$call_modal(${1:Modal ID})",
 		"description": "Call modal"
 	},
 	"Call hide modal": {
-		"prefix": ["_hide_modal", "hidemodal"],
-		"body": "_hide_modal(${1:Modal ID})",
+		"prefix": ["$hide_modal", "hide_modal"],
+		"body": "\\$hide_modal(${1:Modal ID})",
 		"description": "Call hide modal"
 	},
 	"Call sidebar": {
-		"prefix": ["_call_sidebar", "callsidebar"],
-		"body": "_call_sidebar(${1:Sidbar ID})",
+		"prefix": ["$call_sidebar", "call_sidebar"],
+		"body": "\\$call_sidebar(${1:Sidbar ID})",
 		"description": "Call sidebar"
 	},
 	"Dialogue directives": {
-		"prefix": ["_dial_begin", "dialogue"],
+		"prefix": ["$dial_begin", "dialogue"],
 		"body": [
-			"_dial_begin()",
+			"\\$dial_begin()",
 			"\t${1:Content}",
-			"_dial_end()"
+			"\\$dial_end()"
 		],
 		"description": "Dialogue directive"
 	},
-	"Dialogue node": {
-		"prefix": ["_dnode", "dnode"],
-		"body": [
-			"_dnode(${1:id},${2:node type},${3:goto}",
-			"\t${4:content}",
-			")"
-		],
-		"description": "Dialogue node"
+	"Start node": {
+		"prefix": ["start node", "$start_node"],
+		"body": "\\$start_node(${1:Text},${2:Goto})",
+		"description": "Start node"
+	},
+	"End node": {
+		"prefix": ["end node", "$end_node"],
+		"body": "\\$end_node(${1:Text})",
+		"description": "End node"
 	},
 	"Text node": {
-		"prefix": ["_dnode_text", "dnodetext"],
-		"body": [
-			"_dnode(${1:id},text,${2:goto}",
-			"\t_dspeaker(${3:speaker})",
-			"\t_dtext(/#${4:text}#/)",
-			")"
-		],
+		"prefix": ["$text_node", "text_node"],
+		"body": "\\$text_node(${1:ID},${2:Text},${3:Goto},${4:Speaker})",
 		"description": "Text node"
 	},
+	"Omit node": {
+		"prefix": ["$omit_node", "omit_node"],
+		"body": "\\$omit_node(${1:ID},${2:Goto},${3:Speaker})",
+		"description": "Omit node"
+	},
 	"Selection node": {
-		"prefix": ["_dnode_selection", "dnodeselection"],
-		"body": [
-			"_dnode(${1:id},selection,${2:goto}",
-			"\t_dspeaker(${3:speaker})",
-			"\t_dtext(/#${4:text}#/)",
-			"\t_div(",
-			"\t\t_div_sel(${5:goto},${6:text})",
-			"\t\t${7:selections}",
-			"\t)",
-			")"
-		],
+		"prefix": ["$sel_node", "sel_node"],
+		"body": "\\$sel_node(${1:ID},${2:Text},${3:Speaker},${4:Selection items})",
 		"description": "Selection node"
 	},
+	"Dialogue selection item": {
+		"prefix": ["$dsel", "dsel"],
+		"body": "\\$sel(${1:Text},${2:Goto})",
+		"description": "Selection item"
+	},
 	"Branch node": {
-		"prefix": ["_dnode_branch", "dnodebranch"],
-		"body": [
-			"_dnode(${1:id},branch,null",
-			"\t_div(",
-			"\t\t_div_branch(${2:goto},${3:target},${4:qualification})",
-			"\t\t${5:branches}",
-			"\t)",
-			")"
-		],
+		"prefix": ["branch_node", "$branch_node"],
+		"body": "\\$branch_node(${1:ID},${2:Branch items})",
 		"description": "Branch node"
 	},
-	"Dialogue speaker": {
-		"prefix": ["_dspeaker", "dspeaker"],
-		"body" :"_dspeaker(${1:speaker})",
-		"description": "Dialogue speaker"
-	},
-	"Dialogue text": {
-		"prefix": ["_dtext", "dtext"],
-		"body" :"_dtext(/#${1:text}#/)",
-		"description": "Dialogue text"
-	},
-	"Diverion group": {
-		"prefix": ["_div", "div"],
-		"body": ["_div(", "\t${1:Content}", ")"],
-		"description": "Diversion group"
-	},
-	"Diversion selection ": {
-		"prefix": ["_div_sel", "divsel"],
-		"body" :"_div_sel(${1:goto},/#${2:text}#/)",
-		"description": "Diversion selection"
-	},
-	"Diversion branch ": {
-		"prefix": ["_div_branch", "divbranch"],
-		"body" :"_div_branch(${1:goto},${2:target},${3:qualification})",
-		"description": "Diversion branch"
+	"Dialogue branch item": {
+		"prefix": ["$dbranch", "dbranch"],
+		"body": "\\$branch(${1:Target},${2:Qualification},${3:Goto})",
+		"description": "Branch item"
 	},
 	"Flowchart directive": {
-		"prefix": ["_flowchart_begin", "flowchartbegin"],
+		"prefix": ["$flowchart_begin", "flowchartbegin"],
 		"body": [
-			"_flowchart_begin()",
+			"\\$flowchart_begin()",
 			"\t${1:Content}",
-			"_flowchart_end()"
+			"\\$flowchart_end()"
 		],
 		"description": "Flowchart directive"
 	},
+	"Flowchart start node": {
+		"prefix": ["$fstart", "fstart"],
+		"body" :"\\$fstart(${1:Label},${2:Goto})",
+		"description": "Flowchart start node"
+	},
+	"Flowchart end node": {
+		"prefix": ["$fend", "fend"],
+		"body" :"\\$fend(${1:Label})",
+		"description": "Flowchart end node"
+	},
 	"Flowchart node": {
-		"prefix": ["_fnode", "fnode"],
-		"body" :"_fnode(${1:id},${2:label},${3:next id})",
+		"prefix": ["$fnode", "fnode"],
+		"body" :"\\$fnode(${1:id},${2:label},${3:next id})",
 		"description": "Flowchart node"
 	},
+	"Flowchart node right": {
+		"prefix": ["$fnode_right", "fnode_right"],
+		"body" :"\\$fnode_right(${1:id},${2:label},${3:next id})",
+		"description": "Flowchart node with right direction"
+	},
 	"Flowchart condition node": {
-		"prefix": ["_fnode_cond", "fnodecond"],
-		"body" :"_fnode_cond(${1:id},${2:label},${3:yes next id},${4:no next id})",
+		"prefix": ["$fnode_cond", "fnode_cond"],
+		"body" :"\\$fnode_cond(${1:id},${2:label},${3:yes next id},${4:no next id})",
 		"description": "Flowchart condition node"
 	},
 	"Flowchart input node": {
-		"prefix": ["_fnode_input", "fnodeinput"],
-		"body" :"_fnode_input(${1:id},${2:label})",
+		"prefix": ["$fnode_input", "fnode_input"],
+		"body" :"\\$fnode_input(${1:id},${2:label},${3:Next id})",
 		"description": "Flowchart input node"
 	}
 }
