@@ -10,6 +10,10 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.1.0
+
+- New front-end,which is gdengine, has been arrived and syntax changed accoringly
+
 ### 0.0.6
 
 - Added flowchart macro snippet
