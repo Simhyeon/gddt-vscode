@@ -1,8 +1,8 @@
 {
 	"If mod": {
-		"prefix": ["$if_mod", "if_mod"],
+		"prefix": ["$ifmod", "ifmod"],
 		"body": [
-			"\\$if_mod(${1:mod},${2:Content})"
+			"\\$ifmod(${1:mod},\\*${2:Content}*\\)"
 		],
 		"description": "If mod then print"
 	},
@@ -437,6 +437,41 @@
 		],
 		"description": "Card with image"
 	},
+	"Carousel": {
+		"prefix": ["$car", "car"],
+		"body": [
+			"\\$car(${1:ID}, ${2:Content})"
+		],
+		"description": "Carousel"
+	},
+	"Carousel item": {
+		"prefix": ["$car_item", "car_item"],
+		"body": [
+			"\\$car_item(${1:Content})"
+		],
+		"description": "Carousel item"
+	},
+	"Float menu": {
+		"prefix": ["$float_menu", "float_menu"],
+		"body": [
+			"\\$float_menu(${1:ID},${2:Position=top|left|right|bottom},${3:Content})"
+		],
+		"description": "Float menu"
+	},
+	"Float item": {
+		"prefix": ["$float_item", "float_item"],
+		"body": [
+			"\\$float_item(${1:ID},${2:Content})"
+		],
+		"description": "Float item"
+	},
+	"Web dialogue": {
+		"prefix": ["$dial", "dial"],
+		"body": [
+			"\\$dial(${1:ID},${2:speaker},${2:text})"
+		],
+		"description": "Web dialogue"
+	},
 	"Collection": {
 		"prefix": ["$coll", "coll"],
 		"body": [
@@ -547,6 +582,11 @@
 		"prefix": ["$call_sidebar", "call_sidebar"],
 		"body": "\\$call_sidebar(${1:Sidbar ID})",
 		"description": "Call sidebar"
+	},
+	"Call floatmenu": {
+		"prefix": ["$call_float_menu", "call_float_menu"],
+		"body": "\\$call_float_menu(${1:Floatmenu ID})",
+		"description": "Call float menu"
 	},
 	"Dialogue directives": {
 		"prefix": ["$dial_begin", "dialogue"],

@@ -10,6 +10,10 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.1.1
+
+- Removed deterred attribute according to r4d change
+
 ### 0.1.0
 
 - New front-end,which is gdengine, has been arrived and syntax changed accoringly
