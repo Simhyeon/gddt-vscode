@@ -10,6 +10,10 @@ actions by itself and should be used with gdmarp to fully utilize the program.
 
 ## Release Notes
 
+### 0.1.2
+
+- Fixed typos, wrong positioned dollar sign
+
 ### 0.1.1
 
 - Removed deterred attribute according to r4d change
