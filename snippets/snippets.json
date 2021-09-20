@@ -68,7 +68,7 @@
 	},
 	"Indentation": {
 		"prefix": ["idt", "$idt"],
-		"body": "\\$idt(${1:Indent level})",
+		"body": "\\$idt(${1:Indent level}) ${2:Content}",
 		"description": "Indentation"
 	},
 	"Link/Url": {
@@ -78,12 +78,12 @@
 	},
 	"Image": {
 		"prefix": ["image", "$image"],
-		"body": "\\$img(${1:Source})",
+		"body": "\\$image(${1:Source})",
 		"description": "Image"
 	},
 	"Webui image": {
 		"prefix": ["$wimage", "wimage"],
-		"body": "\\$img(${1:Source},${2:ID},${3:Size})",
+		"body": "\\$image(${1:Source},${2:ID},${3:Size})",
 		"description": "Webui image"
 	},
 	"Sized images": {
@@ -120,9 +120,9 @@
 		"prefix": ["split", "$split"],
 		"body": [
 			"\\$left()",
-			"\t${1:Left Content}",
+			"\t\\${1:Left Content}",
 			"\\$right()",
-			"\t${2:Right Content}",
+			"\t\\${2:Right Content}",
 			"\\$end()"
 		],
 		"description": "Split slide"
@@ -167,7 +167,7 @@
 		"prefix": ["$ui", "ui"],
 		"body": [
 			"\\$ui_begin()",
-			"\t${2:Content}",
+			"\t\\${2:Content}",
 			"\\$ui_end()"
 		],
 		"description": "UI begin/end"
@@ -176,7 +176,7 @@
 		"prefix": ["$script", "script"],
 		"body": [
 			"\\$script_begin()",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			"\\$script_end()"
 		],
 		"description": "Script begin/end"
@@ -211,7 +211,7 @@
 		"prefix": ["$container", "container"],
 		"body": [
 			"\\$container(",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			")"
 		],
 		"description": "Container"
@@ -220,7 +220,7 @@
 		"prefix": ["$vcontainer", "vcontainer"],
 		"body": [
 			"\\$vcontainer(",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			")"
 		],
 		"description": "Vertical container"
@@ -229,7 +229,7 @@
 		"prefix": ["$header", "header"],
 		"body": [
 			"\\$header(",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			")"
 		],
 		"description": "Container header"
@@ -238,7 +238,7 @@
 		"prefix": ["$footer", "footer"],
 		"body": [
 			"\\$footer(",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			")"
 		],
 		"description": "Container footer"
@@ -247,7 +247,7 @@
 		"prefix": ["$content", "content"],
 		"body": [
 			"\\$content(${1:ID},${2:Width},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -256,7 +256,7 @@
 		"prefix": ["$content_center", "content_center"],
 		"body": [
 			"\\$content_center(${1:ID},${2:Width},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Content center"
@@ -265,7 +265,7 @@
 		"prefix": ["$content_scroll", "content_scroll"],
 		"body": [
 			"\\$content_scroll(${1:ID},${2:Width},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Content"
@@ -274,7 +274,7 @@
 		"prefix": ["$vcontent", "vcontent"],
 		"body": [
 			"\\$vcontent(${1:ID},${2:Height},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Vertical content"
@@ -283,7 +283,7 @@
 		"prefix": ["$vcontent_center", "vcontent_center"],
 		"body": [
 			"\\$vcontent_center(${1:ID},${2:Height},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Vertical content center"
@@ -292,7 +292,7 @@
 		"prefix": ["$vcontent_scroll", "vcontent_scroll"],
 		"body": [
 			"\\$vcontent_scroll(${1:ID},${2:Height},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Vertical content scroll"
@@ -321,7 +321,7 @@
 		"prefix": ["$inline", "inline"],
 		"body": [
 			"\\$inline(",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			")"
 		],
 		"description": "Inline group"
@@ -335,7 +335,7 @@
 		"prefix": ["$sel", "sel"],
 		"body": [
 			"\\$sel(${1:ID},",
-			"\t(${2:Selection labels})",
+			"\t\\${2:Selection labels}",
 			")"
 		],
 		"description": "Selection"
@@ -404,7 +404,7 @@
 		"body": [
 			"\\$content(${1:Parent ID},100%,",
 			"\t\\$swap_item(${2:ID},${1:Parent ID},",
-			"\t\t${3:Content}",
+			"\t\t\\${3:Content}",
 			"\t)",
 			")"
 		],
@@ -414,7 +414,7 @@
 		"prefix": ["$swap_item", "swap_item"],
 		"body": [
 		"\\$swap_item(${1:ID},${2:Parent ID},",
-		"\t${3:Content}",
+		"\t\\${3:Content}",
 		")"
 		],
 		"description": "Swap item"
@@ -423,7 +423,7 @@
 		"prefix": ["$card", "card"],
 		"body": [
 			"\\$card(${1:ID}, ${2:Title},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Card"
@@ -432,7 +432,7 @@
 		"prefix": ["$card_img", "card_img"],
 		"body": [
 			"\\$card_img(${1:ID},${2:Title},${3:Image url},",
-			"\t${4:Content}",
+			"\t\\${4:Content}",
 			")"
 		],
 		"description": "Card with image"
@@ -476,7 +476,7 @@
 		"prefix": ["$coll", "coll"],
 		"body": [
 			"\\$coll(${1:ID},${2:Loop count},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Collection"
@@ -485,7 +485,7 @@
 		"prefix": ["$vcoll", "vcoll"],
 		"body": [
 			"\\$vcoll(${1:ID},${2:Loop count},",
-			"\t${3:Content}",
+			"\t\\${3:Content}",
 			")"
 		],
 		"description": "Vertical collection"
@@ -494,9 +494,9 @@
 		"prefix": ["$modal", "modal"],
 		"body": [
 			"\\$modal(${1:ID},",
-			"\t${2:Modal Header},",
-			"\t${3:Modal Body},",
-			"\t${4:Modal footer}",
+			"\t\\${2:Modal Header},",
+			"\t\\${3:Modal Body},",
+			"\t\\${4:Modal footer}",
 			")"
 		],
 		"description": "modal"
@@ -505,7 +505,7 @@
 		"prefix": ["$screen_touch", "screen_touch"],
 		"body": [
 			"\\$screentouch(${1:ID},",
-			"\t${2:Content}",
+			"\t\\${2:Content}",
 			")"
 		],
 		"description": "Screen touch"
@@ -514,7 +514,7 @@
 		"prefix": ["$sidebar_left", "sidebar_left"],
 		"body": [
 			"\\$sidebar_left(${1:ID},",
-			"\t${2:Content}",
+			"\t\\${2:Content}",
 			")"
 		],
 		"description": "Sidebar left"
@@ -523,7 +523,7 @@
 		"prefix": ["$sidebar_right", "sidebar_right"],
 		"body": [
 			"\\$sidebar_right(${1:ID},",
-			"\t${2:Content}",
+			"\t\\${2:Content}",
 			")"
 		],
 		"description": "Sidebar right"
@@ -592,8 +592,8 @@
 		"prefix": ["$dial_begin", "dialogue"],
 		"body": [
 			"\\$dial_begin()",
-			"\t${1:Content}",
-			"\\$dial_end()"
+			"\t\\${1:Content}",
+			"\\\\$dial_end()"
 		],
 		"description": "Dialogue directive"
 	},
@@ -641,7 +641,7 @@
 		"prefix": ["$flowchart_begin", "flowchartbegin"],
 		"body": [
 			"\\$flowchart_begin()",
-			"\t${1:Content}",
+			"\t\\${1:Content}",
 			"\\$flowchart_end()"
 		],
 		"description": "Flowchart directive"
