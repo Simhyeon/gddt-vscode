@@ -661,19 +661,19 @@
 		"body" :"\\$fnode(${1:id},${2:label},${3:next id})",
 		"description": "Flowchart node"
 	},
-	"Flowchart node right": {
-		"prefix": ["$fnode_right", "fnode_right"],
-		"body" :"\\$fnode_right(${1:id},${2:label},${3:next id})",
-		"description": "Flowchart node with right direction"
+	"Flowchart node alternative": {
+		"prefix": ["$fnodea", "fnodea"],
+		"body" :"\\$fnodea(${1:id},${2:label},${3:next id})",
+		"description": "Flowchart node with alternative direction"
 	},
 	"Flowchart condition node": {
-		"prefix": ["$fnode_cond", "fnode_cond"],
-		"body" :"\\$fnode_cond(${1:id},${2:label},${3:yes next id},${4:no next id})",
+		"prefix": ["$fcond", "fcond"],
+		"body" :"\\$fcond(${1:id},${2:label},${3:yes next id},${4:no next id})",
 		"description": "Flowchart condition node"
 	},
 	"Flowchart input node": {
-		"prefix": ["$fnode_input", "fnode_input"],
-		"body" :"\\$fnode_input(${1:id},${2:label},${3:Next id})",
+		"prefix": ["$finput", "finput"],
+		"body" :"\\$finput(${1:id},${2:label},${3:Next id})",
 		"description": "Flowchart input node"
 	}
 }

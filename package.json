@@ -2,11 +2,12 @@
     "name": "gddt",
     "displayName": "Gddt",
     "description": "Gddt, game design document text ",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author": {
         "name": "Simon creek"
     },
     "license": "MIT",
+    "icon": "icon.png",
     "publisher": "simoncreek",
     "repository": {
         "type": "git",
